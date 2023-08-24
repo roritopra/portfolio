@@ -1,123 +1,132 @@
 ---
-import Logo from "./Logo.astro"
+import Logo from './Logo.astro'
 ---
 
 <header
-  id="landing-header" class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white">
+	id="landing-header"
+	class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white"
+>
+	<div class="flex flex-grow basis-0">
+		<a href="./" class="w-25px h-46px"><Logo /></a>
+	</div>
 
-  <div class="flex flex-grow basis-0">
-    <a href="./" class="w-25px h-46px"><Logo /></a>
-  </div>
+	<nav class="hidden xl:block sm:hidden">
+		<ul
+			class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+		>
+			<li><a href="">Home</a></li>
+			<li><a href="">About me</a></li>
+			<li><a href="">Projects</a></li>
+			<li><a href="">Get In Touch</a></li>
+		</ul>
+	</nav>
 
-  <nav class="hidden xl:block sm:hidden">
-    <ul class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
-      <li><a href="">Home</a></li>
-      <li><a href="">About me</a></li>
-      <li><a href="">Projects</a></li>
-      <li><a href="">Get In Touch</a></li>
-    </ul>
-  </nav>
+	<nav class="flex flex-grow justify-end basis-0">
+		<ul
+			class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+		>
+			<li class="hidden xl:block sm:hidden"><a href="#">Tienda</a></li>
+			<li class="hidden xl:block sm:hidden"><a href="#">Cuenta</a></li>
+			<li><a href="#">Menú</a></li>
+		</ul>
+	</nav>
 
-  <nav class="flex flex-grow justify-end basis-0">
-    <ul class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
-      <li class="hidden xl:block sm:hidden"><a href="#">Tienda</a></li>
-      <li class="hidden xl:block sm:hidden"><a href="#">Cuenta</a></li>
-      <li><a href="#">Menú</a></li>
-    </ul>
-  </nav>
-
-  <div
-    id="menu-backdrop"
-    class={`absolute bg-black/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-10
+	<div
+		id="menu-backdrop"
+		class={`absolute bg-black/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-10
     `}
-  >
-  </div>
+	>
+	</div>
 </header>
 
-<section class="landing-section bg-black h-screen w-screen text-center overflow-hidden relative">
+<section
+	class="landing-section bg-black h-screen w-screen text-center overflow-hidden relative"
+>
+	<div class="z-30 relative h-full flex flex-col">
+		<footer class="z-30 relative flex flex-col flex-grow justify-end pb-20">
+			<div>
+				<a
+					class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded font-medium text-white px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
+					href="#"
+				>
+					Get In Touch
+				</a>
+			</div>
+		</footer>
+	</div>
 
-    <div class="z-30 relative h-full flex flex-col">
-        <footer class="z-30 relative flex flex-col flex-grow justify-end pb-20">
-            <div>
-                <a class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded font-medium text-white px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors" href="#">
-                    Get In Touch
-                </a>
-            </div>
-        </footer>
-    </div>
-
-    <div class="absolute top-0 bottom-0 h-full w-full z-10">
-        <video class="object-center object-cover h-full w-full" id="myVideo" autoplay muted>
-            <source src="video.webm" type="video/webm">
-            Tu navegador no soporta el elemento video.
-        </video>
-    </div>
+	<div class="absolute top-0 bottom-0 h-full w-full z-10">
+		<video
+			class="object-center object-cover h-full w-full"
+			id="myVideo"
+			autoplay
+			muted
+		>
+			<source src="video.webm" type="video/webm" />
+			Tu navegador no soporta el elemento video.
+		</video>
+	</div>
 </section>
 
+<script>
+	const listItem = document.querySelectorAll('#landing-header li')
+	const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
 
+	listItem.forEach((item) => {
+		item.addEventListener('mouseenter', () => {
+			const { left, top, width, height } = item.getBoundingClientRect()
+
+			menuBackDrop.style.setProperty('--left', `${left}px`)
+			menuBackDrop.style.setProperty('--top', `${top}px`)
+			menuBackDrop.style.setProperty('--width', `${width}px`)
+			menuBackDrop.style.setProperty('--height', `${height}px`)
+
+			menuBackDrop.style.opacity = '1'
+			menuBackDrop.style.visibility = 'visible'
+		})
+
+		item.addEventListener('mouseleave', () => {
+			menuBackDrop.style.opacity = '0'
+			menuBackDrop.style.visibility = 'hidden'
+		})
+	})
+</script>
 
 <script>
-    const listItem = document.querySelectorAll("#landing-header li")
-    const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement
-  
-    listItem.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        const { left, top, width, height } = item.getBoundingClientRect()
-  
-        menuBackDrop.style.setProperty("--left", `${left}px`)
-        menuBackDrop.style.setProperty("--top", `${top}px`)
-        menuBackDrop.style.setProperty("--width", `${width}px`)
-        menuBackDrop.style.setProperty("--height", `${height}px`)
-  
-        menuBackDrop.style.opacity = "1"
-        menuBackDrop.style.visibility = "visible"
-      })
-  
-      item.addEventListener("mouseleave", () => {
-        menuBackDrop.style.opacity = "0"
-        menuBackDrop.style.visibility = "hidden"
-      })
-    })
-    
-  </script>
-  
-  <script>
-    const headerEl = document.querySelector("#landing-header") as HTMLElement
-  
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px", // en cuanto se vea el elemento
-      threshold: 0.9, // porcentaje de visibilidad
-    }
-  
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const { isIntersecting } = entry
-        if (isIntersecting) {
-          const color = entry.target.getAttribute("data-header-color")
-          headerEl.style.color = color
-        }
-      })
-    }, observerOptions)
-  
-    const sectionElements = document.querySelectorAll(".landing-section")
-    sectionElements.forEach((section) => observer.observe(section))
-  </script>
+	const headerEl = document.querySelector('#landing-header') as HTMLElement
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const video = document.getElementById("myVideo");
-  
-    // Reproduce el video desde el segundo cero al cargar la página
-    video.currentTime = 0;
-    video.play();
-  
-    // Cuando el video termine, configuramos el loop desde el segundo 10
-    video.addEventListener("ended", function() {
-      video.currentTime = 12;
-      video.play();
-    });
-  });
-  
-  </script>
-  
+	const observerOptions = {
+		root: null,
+		rootMargin: '0px', // en cuanto se vea el elemento
+		threshold: 0.9, // porcentaje de visibilidad
+	}
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			const { isIntersecting } = entry
+			if (isIntersecting) {
+				const color = entry.target.getAttribute('data-header-color')
+				headerEl.style.color = color
+			}
+		})
+	}, observerOptions)
+
+	const sectionElements = document.querySelectorAll('.landing-section')
+	sectionElements.forEach((section) => observer.observe(section))
+</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const video = document.getElementById('myVideo')
+
+		// Reproduce el video desde el segundo cero al cargar la página
+		video.currentTime = 0
+		video.play()
+
+		// Cuando el video termine, configuramos el loop desde el segundo 10
+		video.addEventListener('ended', function () {
+			video.currentTime = 12
+			video.play()
+		})
+	})
+</script>
