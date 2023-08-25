@@ -1,8 +1,14 @@
 ---
-import Menu from '../components/Menu.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import MenuLanding from '../components/MenuLanding.astro'
+import HeaderLanding from '../components/HeaderLanding.astro';
+import Profile from '../components/Profile.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-		<Menu />
+<Layout title="Rodro">
+	<main class="bg-[#0C1014]">
+		<MenuLanding />
+		<HeaderLanding />
+		<Profile />
+	</main>
 </Layout>

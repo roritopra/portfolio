@@ -1,0 +1,97 @@
+---
+
+---
+
+<main class="bg-[#0C1014]">
+	<section
+		class="landing-section bg-black h-screen w-screen text-center overflow-hidden relative"
+	>
+		<div class="z-30 relative h-full flex flex-col">
+			<footer class="z-30 relative flex flex-col flex-grow justify-end pb-20">
+				<div>
+					<a
+						class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded font-medium text-white px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
+						href="#"
+					>
+						Get In Touch
+					</a>
+				</div>
+			</footer>
+		</div>
+
+		<div class="absolute top-0 bottom-0 h-full w-full z-10">
+			<video
+				class="object-center object-cover h-full w-full"
+				id="myVideo"
+				autoplay
+				muted
+			>
+				<source src="video.webm" type="video/webm" />
+				Tu navegador no soporta el elemento video.
+			</video>
+		</div>
+	</section>
+</main>
+
+<script>
+	const listItem = document.querySelectorAll('#landing-header li')
+	const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+
+	listItem.forEach((item) => {
+		item.addEventListener('mouseenter', () => {
+			const { left, top, width, height } = item.getBoundingClientRect()
+
+			menuBackDrop.style.setProperty('--left', `${left}px`)
+			menuBackDrop.style.setProperty('--top', `${top}px`)
+			menuBackDrop.style.setProperty('--width', `${width}px`)
+			menuBackDrop.style.setProperty('--height', `${height}px`)
+
+			menuBackDrop.style.opacity = '1'
+			menuBackDrop.style.visibility = 'visible'
+		})
+
+		item.addEventListener('mouseleave', () => {
+			menuBackDrop.style.opacity = '0'
+			menuBackDrop.style.visibility = 'hidden'
+		})
+	})
+</script>
+
+<script>
+	const headerEl = document.querySelector('#landing-header') as HTMLElement
+
+	const observerOptions = {
+		root: null,
+		rootMargin: '0px', // en cuanto se vea el elemento
+		threshold: 0.9, // porcentaje de visibilidad
+	}
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			const { isIntersecting } = entry
+			if (isIntersecting) {
+				const color = entry.target.getAttribute('data-header-color')
+				headerEl.style.color = color
+			}
+		})
+	}, observerOptions)
+
+	const sectionElements = document.querySelectorAll('.landing-section')
+	sectionElements.forEach((section) => observer.observe(section))
+</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const video = document.getElementById('myVideo')
+
+		// Reproduce el video desde el segundo cero al cargar la página
+		video.currentTime = 0
+		video.play()
+
+		// Cuando el video termine, configuramos el loop desde el segundo 10
+		video.addEventListener('ended', function () {
+			video.currentTime = 12
+			video.play()
+		})
+	})
+</script>
