@@ -1,3 +1,76 @@
 ---
-
+import Astra from '/astra.webp'
 ---
+
+<section
+	class="flex justify-center items-center h-screen w-screen overflow-hidden relative p-10 z-10"
+>
+	<div class="angry-grid">
+		<div class="w-full text-lg text-center p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755] drop-shadow-[0px_60px_80px_rgba(0,235,166,0.20)]" id="item-0">
+            <div class="flex justify-center items-center h-full w-full bg-gray-800">
+                <img class="p-2" src={Astra} alt="">
+            </div>
+        </div>
+		<div class="box" id="item-1">&nbsp; B</div>
+		<div class="box" id="item-2">&nbsp; C</div>
+		<div class="box" id="item-3">&nbsp; D</div>
+		<div class="box" id="item-4">&nbsp; E</div>
+		<div class="box" id="item-5">&nbsp; F</div>
+	</div>
+</section>
+
+<style>
+	.angry-grid {
+		display: grid;
+		grid-template-rows: repeat(4, fr);
+		grid-template-columns: repeat(3, 1fr);
+		gap: 9px;
+		width: 100%;
+		position: relative;
+        grid-column: 2 / 12;
+	}
+
+	.box {
+		background-color: #333;
+		color: white;
+		padding: 20px;
+		font-size: 24px;
+		text-align: center;
+		border-radius: 8px;
+		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	#item-0 {
+
+		grid-row-start: 1;
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	#item-1 {
+		grid-row-start: 2;
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+	#item-2 {
+		grid-row-start: 2;
+		grid-column-start: 2;
+		grid-column-end: 3;
+	}
+	#item-3 {
+		grid-row-start: 2;
+		grid-column-start: 3;
+
+		grid-row-end: 4;
+		grid-column-end: 4;
+	}
+	#item-4 {
+		grid-row-start: 3;
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	#item-5 {
+		grid-row-start: 4;
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+</style>

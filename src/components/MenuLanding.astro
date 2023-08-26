@@ -1,5 +1,8 @@
 ---
 import Logo from './Logo.astro'
+import Behance from '/behance.svg'
+import Github from '/github.svg'
+import Linkedin from '/linkedin.svg'
 ---
 
 <header
@@ -23,10 +26,12 @@ import Logo from './Logo.astro'
 
 	<nav class="flex flex-grow justify-end basis-0">
 		<ul
-			class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+			class="flex items-center text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
 		>
-			<li class="hidden xl:block sm:hidden"><a href="#">Github</a></li>
-			<li><a href="#">Menu</a></li>
+			<li class="hidden xl:block sm:hidden"><a href="#"><img src={Linkedin} alt=""></a></li>
+			<li class="hidden xl:block sm:hidden"><a href="#"><img src={Github} alt=""></a></li>
+			<li class="hidden xl:block sm:hidden"><a href="#"><img src={Behance} alt=""></a></li>
+			<li class="hidden sm:block xl:hidden "><a href="#">Menu</a></li>
 		</ul>
 	</nav>
 
@@ -37,3 +42,67 @@ import Logo from './Logo.astro'
 	>
 	</div>
 </header>
+
+
+<script>
+	const listItem = document.querySelectorAll('#landing-header li')
+	const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+
+	listItem.forEach((item) => {
+		item.addEventListener('mouseenter', () => {
+			const { left, top, width, height } = item.getBoundingClientRect()
+
+			menuBackDrop.style.setProperty('--left', `${left}px`)
+			menuBackDrop.style.setProperty('--top', `${top}px`)
+			menuBackDrop.style.setProperty('--width', `${width}px`)
+			menuBackDrop.style.setProperty('--height', `${height}px`)
+
+			menuBackDrop.style.opacity = '1'
+			menuBackDrop.style.visibility = 'visible'
+		})
+
+		item.addEventListener('mouseleave', () => {
+			menuBackDrop.style.opacity = '0'
+			menuBackDrop.style.visibility = 'hidden'
+		})
+	})
+</script>
+
+<script>
+	const headerEl = document.querySelector('#landing-header') as HTMLElement
+
+	const observerOptions = {
+		root: null,
+		rootMargin: '0px', // en cuanto se vea el elemento
+		threshold: 0.9, // porcentaje de visibilidad
+	}
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			const { isIntersecting } = entry
+			if (isIntersecting) {
+				const color = entry.target.getAttribute('data-header-color')
+				headerEl.style.color = color
+			}
+		})
+	}, observerOptions)
+
+	const sectionElements = document.querySelectorAll('.landing-section')
+	sectionElements.forEach((section) => observer.observe(section))
+</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const video = document.getElementById('myVideo')
+
+		// Reproduce el video desde el segundo cero al cargar la página
+		video.currentTime = 0
+		video.play()
+
+		// Cuando el video termine, configuramos el loop desde el segundo 10
+		video.addEventListener('ended', function () {
+			video.currentTime = 12
+			video.play()
+		})
+	})
+</script>

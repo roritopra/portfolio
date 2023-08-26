@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro'
 import MenuLanding from '../components/MenuLanding.astro'
 import HeaderLanding from '../components/HeaderLanding.astro'
 import Profile from '../components/Profile.astro'
+import ProjectsGrids from '../components/ProjectsGrids.astro';
 ---
 
-<Layout title="Rodro">
+<Layout title="Rodro | UX/Front Dev">
 	<MenuLanding />
 	<main
 		class="bg-[#0C1014] snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
@@ -23,11 +24,14 @@ import Profile from '../components/Profile.astro'
 		z-index: 1;"
 		>
 		</div>
-		<div class="snap-center">
+		<div class="">
 			<HeaderLanding />
 		</div>
-		<div class="snap-center">
+		<div class="">
 			<Profile />
+		</div>
+		<div class="">
+			<ProjectsGrids />
 		</div>
 	</main>
 </Layout>
