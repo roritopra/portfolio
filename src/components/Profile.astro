@@ -2,9 +2,9 @@
 import profile from '../../public/person.webp'
 ---
 
-<section class="flex justify-center items-center py-64 m-auto">
-	<article
-		class="max-w-3xl rounded-lg bg-gradient-to-t from-[#03B381] to-[#3B4755] p-1"
+<section id="profile" class="flex justify-center items-center h-screen w-screen overflow-hidden relative z-10">
+	<article 
+		class="max-w-3xl rounded-lg bg-gradient-to-t from-[#03B381] to-[#3B4755] p-1 drop-shadow-[0px_60px_80px_rgba(0,235,166,0.20)]"
 	>
 		<div class="bg-gray-800 flex items-center flex-row rounded-lg">
 			<div class="flex flex-col justify-between p-4 leading-normal w/">
@@ -17,21 +17,18 @@ import profile from '../../public/person.webp'
 				>
 					About
 				</h5>
-				<h2 class="text-white font-bold text-5xl mb-2">Developer</h2>
+				<h2 class="text-white font-bold text-5xl mb-3">Developer</h2>
 				<p class="text-[#C2C2C2]">
-					I am Juan Rodriguez, <span class="text-white font-medium">Interactive Media Designer</span> with vocation
-					to work in
-					<span class="text-white font-medium">UX, Frontend devolper</span> and even Mobile application development.
-					With skills in interface design, ux research and facility to program emerging
-					technologies, which allows me to present proposals focused on digital design
-					and user-oriented experiences.
+					I am Juan Rodriguez, <span class="text-white font-medium"
+						>Interactive Media Designer</span
+					> with vocation to work in
+					<span class="text-white font-medium">UX, Frontend devolper</span> and even
+					Mobile application development. With skills in interface design, ux research
+					and facility to program emerging technologies, which allows me to present
+					proposals focused on digital design and user-oriented experiences.
 				</p>
 			</div>
-			<img
-				class="w-full rounded-t-lg h-96 rounded-r-lg"
-				src={profile}
-				alt=""
-			/>
+			<img class="w-full rounded-t-lg h-96 rounded-r-lg" src={profile} alt="" />
 		</div>
 	</article>
 </section>
