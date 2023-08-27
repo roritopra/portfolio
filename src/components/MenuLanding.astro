@@ -28,10 +28,16 @@ import Linkedin from '/linkedin.svg'
 		<ul
 			class="flex items-center text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
 		>
-			<li class="hidden xl:block sm:hidden"><a href="#"><img src={Linkedin} alt=""></a></li>
-			<li class="hidden xl:block sm:hidden"><a href="#"><img src={Github} alt=""></a></li>
-			<li class="hidden xl:block sm:hidden"><a href="#"><img src={Behance} alt=""></a></li>
-			<li class="block sm:block xl:hidden "><a href="#">Menu</a></li>
+			<li class="hidden xl:block sm:hidden">
+				<a href="#"><img src={Linkedin} alt="" /></a>
+			</li>
+			<li class="hidden xl:block sm:hidden">
+				<a href="#"><img src={Github} alt="" /></a>
+			</li>
+			<li class="hidden xl:block sm:hidden">
+				<a href="#"><img src={Behance} alt="" /></a>
+			</li>
+			<li class="block sm:block xl:hidden"><a href="#">Menu</a></li>
 		</ul>
 	</nav>
 
@@ -42,7 +48,6 @@ import Linkedin from '/linkedin.svg'
 	>
 	</div>
 </header>
-
 
 <script>
 	const listItem = document.querySelectorAll('#landing-header li')

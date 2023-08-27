@@ -1,66 +1,142 @@
 ---
 import Astra from '/astra.webp'
+import Tyco from '/tyco.webp'
+import HM from '/h&m.webp'
+import Rodro from '/rodro.webp'
+import Bank from '/bancow.webp'
+import Bitx from '/bitx.webp'
 ---
 
-<section
-	class="flex justify-center flex-col items-center h-screen w-screen relative 2xl:px-36 z-10 sm:px-1"
->
-	<div class="flex justify-center items-center flex-col mb-32">
-		<h6 class="mb-2 text-xl font-bold tracking-tight"
-			style="background: var(--titlessubtitles, linear-gradient(89deg, #01EBA6 0%, #01D398 34.90%, #01A47D 69.79%, #018C77 97.97%));
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;"
-		>
-			Work
-		</h6>
-		<h2 class="text-white font-bold text-5xl mb-3">Dig into my universe</h2>
-	</div>
-	<div class="angry-grid w-3/6 container mx-auto aspect-4/3">
+<section class="relative px-12 grid grid-cols-12">
+	<article
+		style="grid-column: 4 / 12;"
+		class="flex flex-col justify-center items-center"
+	>
 		<div
-			class="w-full text-lg text-center p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
-			id="item-0"
+			class="w-full aspect-4/3 grid grid-cols-4 grid-rows-3 gap-2 relative z-10"
 		>
-			<div class="flex justify-center items-center h-full w-full bg-gray-800">
-				<img class="p-1" style="max-width: 50%;
-				aspect-ratio: 1 / 1;
-				object-fit: contain;" src={Astra} alt="" />
+			<div
+				class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+				id="item-0"
+			>
+				<div
+					class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
+				>
+					<img
+						style="max-width: 30%;
+						aspect-ratio: 1 / 1;"
+						class="object-contain py-5"
+						src={Astra}
+						alt=""
+					/>
+				</div>
+			</div>
+			<div
+				class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+				id="item-1"
+			>
+				<div
+					class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
+				>
+					<img
+						style="max-width: 80%;
+						aspect-ratio: 1 / 1;"
+						class="object-contain"
+						src={Tyco}
+						alt=""
+					/>
+				</div>
+			</div>
+			<div
+				class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+				id="item-2"
+			>
+				<div
+					style="background: linear-gradient(180deg, #FFF 0%, #D7D0CF 100%);
+				"
+					class="flex justify-center items-center h-full rounded-md w-full"
+				>
+					<img
+						style="max-width: 80%;
+						aspect-ratio: 1 / 1;"
+						class="object-contain"
+						src={HM}
+						alt=""
+					/>
+				</div>
+			</div>
+			<div
+				class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+				id="item-3"
+			>
+				<div
+					class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
+				>
+					<img
+						style="max-width: 80%;
+						aspect-ratio: 1 / 1;"
+						class="object-contain"
+						src={Rodro}
+						alt=""
+					/>
+				</div>
+			</div>
+			<div
+				class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+				id="item-4"
+			>
+				<div
+					class="flex justify-center items-center h-full rounded-md w-full bg-white"
+				>
+					<img
+						style="max-width: 60%;
+						aspect-ratio: 0 / 0;"
+						class="object-contain"
+						src={Bank}
+						alt=""
+					/>
+				</div>
+			</div>
+			<div
+				class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+				id="item-5"
+			>
+				<div
+					class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
+				>
+					<img
+						style="max-width: 30%;
+						aspect-ratio: 1 / 1;"
+						class="object-contain py-5"
+						src={Bitx}
+						alt=""
+					/>
+				</div>
 			</div>
 		</div>
-		<div
-			class="w-full text-lg text-center p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
-			id="item-1"
-		>
-			<div class="flex justify-center items-center h-full w-full bg-gray-800">
-			</div>
-		</div>
-		<div class="box" id="item-2">&nbsp; C</div>
-		<div class="box" id="item-3">&nbsp; D</div>
-		<div class="box" id="item-4">&nbsp; E</div>
-		<div class="box" id="item-5">&nbsp; F</div>
-	</div>
+	</article>
 </section>
 
+<!-- 
+<div
+	class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+	id="item-0"
+>
+	<div
+		class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
+	>
+		<img
+			style="max-width: 30%;
+			aspect-ratio: 1 / 1;"
+			class="object-contain"
+			src={Astra}
+			alt=""
+		/>
+	</div>
+</div>
+-->
+
 <style>
-	.angry-grid {
-		display: grid;
-		grid-template-rows: repeat(4, fr);
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 9px;
-		position: relative;
-		grid-column: 2 / 12;
-	}
-
-	.box {
-		background-color: #333;
-		color: white;
-		padding: 20px;
-		font-size: 24px;
-		text-align: center;
-		border-radius: 8px;
-		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-	}
-
 	#item-0 {
 		grid-row-start: 1;
 		grid-column-start: 1;
