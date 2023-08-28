@@ -9,6 +9,7 @@ import CallToAction from '../components/CallToAction.astro';
 ---
 
 <Layout title="Rodro | UX/Front Dev">
+	<div class="noise bg-noise"></div>
 	<MenuLanding />
 	<main
 		class="bg-[#0C1014] snap-y snap-mandatory relative z-30 w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
@@ -43,3 +44,18 @@ import CallToAction from '../components/CallToAction.astro';
 		</div>
 	</main>
 </Layout>
+
+<style>
+	.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    content: "";
+    opacity: .020;
+    z-index: 1000;
+    pointer-events: none;
+    background-image: url(/noise.gif);
+}
+</style>
