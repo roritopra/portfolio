@@ -1,0 +1,171 @@
+---
+---
+
+<section>
+	<div class="call-to-action relative z-20">
+		<div class="carousel">
+			<div class="carousel-track">
+				<h3>
+					rodrocarabali@gmail.com — Let’s get in touch — rodrocarabali@gmail.com
+					— Let’s get in touch
+				</h3>
+			</div>
+		</div>
+		<a class="call-to-action-button btn btn-white" href="">
+			<svg
+				width="32"
+				height="32"
+				viewBox="0 0 32 32"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					d="M26.5 6H5.5C4.11929 6 3 7.11929 3 8.5V23.5C3 24.8807 4.11929 26 5.5 26H26.5C27.8807 26 29 24.8807 29 23.5V8.5C29 7.11929 27.8807 6 26.5 6Z"
+					stroke="#0A0A0A"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path><path
+					d="M7 10L16 17L25 10"
+					stroke="#0A0A0A"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path></svg
+			>
+		</a>
+	</div>
+</section>
+
+<style>
+	section {
+		display: block;
+	}
+
+	.call-to-action {
+		padding-bottom: 120px;
+		overflow: hidden;
+		padding: 240px 0;
+		padding-top: 120px;
+		position: relative;
+	}
+	.call-to-action .carousel {
+		height: 64px;
+		position: relative;
+	}
+	.call-to-action .carousel-track {
+		animation: carousel-loop 60s linear infinite;
+		display: inline-flex;
+		left: 0;
+		position: absolute;
+		top: 0;
+		transform: translateX(-50%);
+		white-space: nowrap;
+		will-change: transform;
+	}
+	.call-to-action h3 {
+		font-size: 100px;
+		font-size: 48px;
+		color: white;
+		/* line-height: 1.16; */
+	}
+
+	.call-to-action .call-to-action-button {
+		align-items: center;
+		background: #fff;
+		border-radius: 50%;
+		box-shadow: 0 0 60px #0a0a0a;
+		display: flex;
+		height: 144px;
+		justify-content: center;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 144px;
+		z-index: 2021;
+	}
+
+	@keyframes carousel-loop {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.call-to-action .call-to-action-button {
+		align-items: center;
+		background: #fff;
+		border-radius: 50%;
+		box-shadow: 0 0 60px #0a0a0a;
+		display: flex;
+		height: 144px;
+		justify-content: center;
+		left: 50%;
+		position: absolute;
+		top: 39%;
+		transform: translate(-50%, -50%);
+		width: 144px;
+		z-index: 2021;
+	}
+	.btn-white,
+	.btn-white:focus {
+		background-color: transparent;
+		border-color: transparent;
+		color: #0a0a0a;
+	}
+	.btn {
+		align-items: center;
+		background: transparent;
+		border: 0;
+		border-radius: 60px;
+		box-sizing: border-box;
+		display: inline-flex;
+		font-size: 18px;
+		font-weight: 500;
+		height: 56px;
+		justify-content: center;
+		line-height: calc(54px - 1rem);
+		padding: 0 56px;
+		position: relative;
+		transition-duration: 0.5s;
+		transition-property: background-color, color, border-color, box-shadow;
+		transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+	}
+	a {
+		color: inherit;
+	}
+	a {
+		background-color: transparent;
+		color: #007bff;
+		text-decoration: none;
+	}
+	.btn-white:before,
+	.btn-white:focus:before {
+		background: #fff;
+	}
+	.btn:before {
+		border-radius: inherit;
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+			opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+		width: 100%;
+	}
+	.call-to-action .call-to-action-button svg {
+		position: relative;
+		z-index: 2;
+	}
+
+	svg {
+		overflow: hidden;
+	}
+	img,
+	svg {
+		vertical-align: middle;
+	}
+</style>

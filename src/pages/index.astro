@@ -5,12 +5,13 @@ import HeaderLanding from '../components/HeaderLanding.astro'
 import Profile from '../components/Profile.astro'
 import ProjectsGrids from '../components/ProjectsGrids.astro';
 import Skills from '../components/Skills.astro';
+import CallToAction from '../components/CallToAction.astro';
 ---
 
 <Layout title="Rodro | UX/Front Dev">
 	<MenuLanding />
 	<main
-		class="bg-[#0C1014] snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
+		class="bg-[#0C1014] snap-y snap-mandatory relative z-30 w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
 	>
 		<div
 			style="position: fixed;
@@ -36,6 +37,9 @@ import Skills from '../components/Skills.astro';
 		</div>
 		<div class="">
 			<Skills />
+		</div>
+		<div class="">
+			<CallToAction />
 		</div>
 	</main>
 </Layout>
