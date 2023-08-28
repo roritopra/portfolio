@@ -7,13 +7,30 @@ import Bank from '/bancow.webp'
 import Bitx from '/bitx.webp'
 ---
 
-<section class="relative px-12 grid grid-cols-12">
+<section
+	style="grid-template-columns: repeat(14, minmax(0, 1fr));"
+	class="relative h-full px-12 grid grid-cols-12"
+>
 	<article
 		style="grid-column: 4 / 12;"
 		class="flex flex-col justify-center items-center"
 	>
+		<div class="flex justify-center flex-col items-center mb-28">
+			<h6
+				style="background: var(--titlessubtitles, linear-gradient(89deg, #01EBA6 0%, #01D398 34.90%, #01A47D 69.79%, #018C77 97.97%));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;"
+				class="relative z-40 text-center mb-2 text-xl font-bold tracking-tight"
+			>
+				Work
+			</h6>
+			<h2 class="relative z-30 text-center text-white font-bold text-5xl mb-3">
+				Dig into my universe
+			</h2>
+		</div>
 		<div
-			class="w-full aspect-4/3 grid grid-cols-4 grid-rows-3 gap-2 relative z-10"
+			class="w-full aspect-4/3 grid grid-cols-3 grid-rows-3 gap-2 relative z-10"
 		>
 			<div
 				class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
@@ -36,7 +53,7 @@ import Bitx from '/bitx.webp'
 				id="item-1"
 			>
 				<div
-					class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
+					class="flex justify-center items-center h-full rounded-md w-full bg-[#25073C]"
 				>
 					<img
 						style="max-width: 80%;
@@ -70,7 +87,7 @@ import Bitx from '/bitx.webp'
 				id="item-3"
 			>
 				<div
-					class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
+					class="flex justify-center items-center h-full rounded-md w-full bg-[#122C35]"
 				>
 					<img
 						style="max-width: 80%;
@@ -89,7 +106,7 @@ import Bitx from '/bitx.webp'
 					class="flex justify-center items-center h-full rounded-md w-full bg-white"
 				>
 					<img
-						style="max-width: 60%;
+						style="max-width: 55%;
 						aspect-ratio: 0 / 0;"
 						class="object-contain"
 						src={Bank}
@@ -102,7 +119,7 @@ import Bitx from '/bitx.webp'
 				id="item-5"
 			>
 				<div
-					class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
+					class="flex justify-center items-center h-full rounded-md w-full bg-[#1B1D23]"
 				>
 					<img
 						style="max-width: 30%;
