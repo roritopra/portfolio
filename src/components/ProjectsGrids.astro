@@ -5,7 +5,16 @@ import HM from '/h&m.webp'
 import Rodro from '/rodro.webp'
 import Bank from '/bancow.webp'
 import Bitx from '/bitx.webp'
+import AstraBg from '/astraBg.png'
+import BitxBg from '/bitxBg.png'
+
 ---
+
+<style>
+	.hover-image {
+		opacity: 1;
+	}
+</style>
 
 <section
 	style="grid-template-columns: repeat(14, minmax(0, 1fr));"
@@ -33,17 +42,26 @@ import Bitx from '/bitx.webp'
 			class="w-full aspect-4/3 grid grid-cols-3 grid-rows-3 gap-2 relative z-10"
 		>
 			<div
-				class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+				class="w-full cursor-pointer h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
 				id="item-0"
 			>
 				<div
-					class="flex justify-center items-center h-full rounded-md w-full bg-gray-800 hover:content-[url('/awgag.png')] hover:bg-contain bg-no-repeat"
+					class="card-image flex justify-center relative items-center h-full rounded-md w-full bg-gray-800"
 				>
 					<img
 						style="max-width: 30%;
 						aspect-ratio: 1 / 1;"
-						class="object-contain py-5"
+						id="image1"
+						class="object-contain py-5 transition-opacity duration-500"
 						src={Astra}
+						alt=""
+					/>
+					<img
+						style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+						id="image2"
+						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						src={AstraBg}
 						alt=""
 					/>
 				</div>
@@ -119,13 +137,22 @@ import Bitx from '/bitx.webp'
 				id="item-5"
 			>
 				<div
-					class="flex justify-center items-center h-full rounded-md w-full bg-[#1B1D23]"
+					class="card-image flex justify-center relative items-center h-full rounded-md w-full bg-gray-800"
 				>
 					<img
 						style="max-width: 30%;
 						aspect-ratio: 1 / 1;"
-						class="object-contain py-5"
+						id="image3"
+						class="object-contain py-5 transition-opacity duration-500"
 						src={Bitx}
+						alt=""
+					/>
+					<img
+						style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+						id="image4"
+						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						src={AstraBg}
 						alt=""
 					/>
 				</div>
@@ -133,6 +160,38 @@ import Bitx from '/bitx.webp'
 		</div>
 	</article>
 </section>
+
+<script>
+	const cardImage = document.querySelector('.card-image');
+	const image1 = document.getElementById('image1');
+	const image2 = document.getElementById('image2');
+
+	cardImage.addEventListener('mouseenter', () => {
+		image1.style.opacity = '0';
+		image2.style.opacity = '1';
+	});
+
+	cardImage.addEventListener('mouseleave', () => {
+		image1.style.opacity = '1';
+		image2.style.opacity = '0';
+	});
+</script>
+
+<script>
+	const cardImage2 = document.querySelector('.card-image');
+	const image3 = document.getElementById('image1');
+	const image4 = document.getElementById('image2');
+
+	cardImage2.addEventListener('mouseenter', () => {
+		image3.style.opacity = '0';
+		image4.style.opacity = '1';
+	});
+
+	cardImage2.addEventListener('mouseleave', () => {
+		image3.style.opacity = '1';
+		image4.style.opacity = '0';
+	});
+</script>
 
 <!-- 
 <div
