@@ -1,12 +1,15 @@
 ---
 import Astra from '/astra.webp'
-import Tyco from '/tyco.webp'
+import Starbucks from '/starbucks.webp'
 import HM from '/h&m.webp'
 import Rodro from '/rodro.webp'
 import Bank from '/bancow.webp'
 import Bitx from '/bitx.webp'
 import AstraBg from '/astraBg.png'
 import BitxBg from '/bitxBg.png'
+import BankBg from '/bankBg.png'
+import HMBg from '/hmBg.png'
+import StarbucksBg from '/starbucksBg.png'
 
 ---
 
@@ -71,13 +74,22 @@ import BitxBg from '/bitxBg.png'
 				id="item-1"
 			>
 				<div
-					class="flex justify-center items-center h-full rounded-md w-full bg-[#25073C]"
+					class="card-image5 cursor-pointer flex justify-center relative items-center h-full rounded-md w-full bg-[#1E3932]"
 				>
 					<img
-						style="max-width: 80%;
+						style="max-width: 60%;
 						aspect-ratio: 1 / 1;"
-						class="object-contain"
-						src={Tyco}
+						id="image9"
+						class="object-contain py-5 transition-opacity duration-500"
+						src={Starbucks}
+						alt=""
+					/>
+					<img
+						style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+						id="image10"
+						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						src={StarbucksBg}
 						alt=""
 					/>
 				</div>
@@ -89,13 +101,22 @@ import BitxBg from '/bitxBg.png'
 				<div
 					style="background: linear-gradient(180deg, #FFF 0%, #D7D0CF 100%);
 				"
-					class="flex justify-center items-center h-full rounded-md w-full"
+					class="card-image4 cursor-pointer flex justify-center relative items-center h-full rounded-md w-full"
 				>
 					<img
 						style="max-width: 80%;
 						aspect-ratio: 1 / 1;"
-						class="object-contain"
+						class="object-contain py-5 transition-opacity duration-500"
+						id="image7"
 						src={HM}
+						alt=""
+					/>
+					<img
+						style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+						id="image8"
+						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						src={HMBg}
 						alt=""
 					/>
 				</div>
@@ -121,13 +142,22 @@ import BitxBg from '/bitxBg.png'
 				id="item-4"
 			>
 				<div
-					class="flex justify-center items-center h-full rounded-md w-full bg-white"
+					class="card-image3 cursor-pointer flex justify-center relative items-center h-full rounded-md w-full bg-white"
 				>
 					<img
 						style="max-width: 55%;
 						aspect-ratio: 0 / 0;"
-						class="object-contain"
+						id="image5"
+						class="object-contain py-5 transition-opacity duration-500"
 						src={Bank}
+						alt=""
+					/>
+					<img
+						style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+						id="image6"
+						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						src={BankBg}
 						alt=""
 					/>
 				</div>
@@ -137,7 +167,7 @@ import BitxBg from '/bitxBg.png'
 				id="item-5"
 			>
 				<div
-					class="card-image2 flex justify-center relative items-center h-full rounded-md w-full bg-gray-800"
+					class="card-image2 cursor-pointer flex justify-center relative items-center h-full rounded-md w-full bg-gray-800"
 				>
 					<img
 						style="max-width: 30%;
@@ -175,9 +205,7 @@ import BitxBg from '/bitxBg.png'
 		image1.style.opacity = '1';
 		image2.style.opacity = '0';
 	});
-</script>
 
-<script>
 	const cardImage2 = document.querySelector('.card-image2');
 	const image3 = document.getElementById('image3');
 	const image4 = document.getElementById('image4');
@@ -190,6 +218,48 @@ import BitxBg from '/bitxBg.png'
 	cardImage2.addEventListener('mouseleave', () => {
 		image3.style.opacity = '1';
 		image4.style.opacity = '0';
+	});
+
+	const cardImage3 = document.querySelector('.card-image3');
+	const image5 = document.getElementById('image5');
+	const image6 = document.getElementById('image6');
+
+	cardImage3.addEventListener('mouseenter', () => {
+		image5.style.opacity = '0';
+		image6.style.opacity = '1';
+	});
+
+	cardImage3.addEventListener('mouseleave', () => {
+		image5.style.opacity = '1';
+		image6.style.opacity = '0';
+	});
+
+	const cardImage4 = document.querySelector('.card-image4');
+	const image7 = document.getElementById('image7');
+	const image8 = document.getElementById('image8');
+
+	cardImage4.addEventListener('mouseenter', () => {
+		image7.style.opacity = '0';
+		image8.style.opacity = '1';
+	});
+
+	cardImage4.addEventListener('mouseleave', () => {
+		image7.style.opacity = '1';
+		image8.style.opacity = '0';
+	});
+
+	const cardImage5 = document.querySelector('.card-image5');
+	const image9 = document.getElementById('image9');
+	const image10 = document.getElementById('image10');
+
+	cardImage5.addEventListener('mouseenter', () => {
+		image9.style.opacity = '0';
+		image10.style.opacity = '1';
+	});
+
+	cardImage5.addEventListener('mouseleave', () => {
+		image9.style.opacity = '1';
+		image10.style.opacity = '0';
 	});
 </script>
 
