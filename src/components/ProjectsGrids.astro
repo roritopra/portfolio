@@ -10,7 +10,6 @@ import BitxBg from '/bitxBg.png'
 import BankBg from '/bankBg.png'
 import HMBg from '/hmBg.png'
 import StarbucksBg from '/starbucksBg.png'
-
 ---
 
 <style>
@@ -63,7 +62,7 @@ import StarbucksBg from '/starbucksBg.png'
 						style="max-width: 100%;
 						aspect-ratio: 1 / 1;"
 						id="image2"
-						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={AstraBg}
 						alt=""
 					/>
@@ -88,7 +87,7 @@ import StarbucksBg from '/starbucksBg.png'
 						style="max-width: 100%;
 						aspect-ratio: 1 / 1;"
 						id="image10"
-						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={StarbucksBg}
 						alt=""
 					/>
@@ -115,7 +114,7 @@ import StarbucksBg from '/starbucksBg.png'
 						style="max-width: 100%;
 						aspect-ratio: 1 / 1;"
 						id="image8"
-						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={HMBg}
 						alt=""
 					/>
@@ -156,7 +155,7 @@ import StarbucksBg from '/starbucksBg.png'
 						style="max-width: 100%;
 						aspect-ratio: 1 / 1;"
 						id="image6"
-						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={BankBg}
 						alt=""
 					/>
@@ -181,7 +180,7 @@ import StarbucksBg from '/starbucksBg.png'
 						style="max-width: 100%;
 						aspect-ratio: 1 / 1;"
 						id="image4"
-						class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={BitxBg}
 						alt=""
 					/>
@@ -192,95 +191,90 @@ import StarbucksBg from '/starbucksBg.png'
 </section>
 
 <script>
-	const cardImage = document.querySelector('.card-image');
-	const image1 = document.getElementById('image1');
-	const image2 = document.getElementById('image2');
+	const cardImage = document.querySelector('.card-image')
+	const image1 = document.getElementById('image1')
+	const image2 = document.getElementById('image2')
 
 	cardImage.addEventListener('mouseenter', () => {
-		image1.style.opacity = '0';
-		image2.style.opacity = '1';
-	});
+		image1.style.opacity = '0'
+		image2.style.opacity = '1'
+	})
 
 	cardImage.addEventListener('mouseleave', () => {
-		image1.style.opacity = '1';
-		image2.style.opacity = '0';
-	});
+		image1.style.opacity = '1'
+		image2.style.opacity = '0'
+	})
 
-	const cardImage2 = document.querySelector('.card-image2');
-	const image3 = document.getElementById('image3');
-	const image4 = document.getElementById('image4');
+	const cardImage2 = document.querySelector('.card-image2')
+	const image3 = document.getElementById('image3')
+	const image4 = document.getElementById('image4')
 
 	cardImage2.addEventListener('mouseenter', () => {
-		image3.style.opacity = '0';
-		image4.style.opacity = '1';
-	});
+		image3.style.opacity = '0'
+		image4.style.opacity = '1'
+	})
 
 	cardImage2.addEventListener('mouseleave', () => {
-		image3.style.opacity = '1';
-		image4.style.opacity = '0';
-	});
+		image3.style.opacity = '1'
+		image4.style.opacity = '0'
+	})
 
-	const cardImage3 = document.querySelector('.card-image3');
-	const image5 = document.getElementById('image5');
-	const image6 = document.getElementById('image6');
+	const cardImage3 = document.querySelector('.card-image3')
+	const image5 = document.getElementById('image5')
+	const image6 = document.getElementById('image6')
 
 	cardImage3.addEventListener('mouseenter', () => {
-		image5.style.opacity = '0';
-		image6.style.opacity = '1';
-	});
+		image5.style.opacity = '0'
+		image6.style.opacity = '1'
+	})
 
 	cardImage3.addEventListener('mouseleave', () => {
-		image5.style.opacity = '1';
-		image6.style.opacity = '0';
-	});
+		image5.style.opacity = '1'
+		image6.style.opacity = '0'
+	})
 
-	const cardImage4 = document.querySelector('.card-image4');
-	const image7 = document.getElementById('image7');
-	const image8 = document.getElementById('image8');
+	const cardImage4 = document.querySelector('.card-image4')
+	const image7 = document.getElementById('image7')
+	const image8 = document.getElementById('image8')
 
 	cardImage4.addEventListener('mouseenter', () => {
-		image7.style.opacity = '0';
-		image8.style.opacity = '1';
-	});
+		image7.style.opacity = '0'
+		image8.style.opacity = '1'
+	})
 
 	cardImage4.addEventListener('mouseleave', () => {
-		image7.style.opacity = '1';
-		image8.style.opacity = '0';
-	});
+		image7.style.opacity = '1'
+		image8.style.opacity = '0'
+	})
 
-	const cardImage5 = document.querySelector('.card-image5');
-	const image9 = document.getElementById('image9');
-	const image10 = document.getElementById('image10');
+	const cardImage5 = document.querySelector('.card-image5')
+	const image9 = document.getElementById('image9')
+	const image10 = document.getElementById('image10')
 
 	cardImage5.addEventListener('mouseenter', () => {
-		image9.style.opacity = '0';
-		image10.style.opacity = '1';
-	});
+		image9.style.opacity = '0'
+		image10.style.opacity = '1'
+	})
 
 	cardImage5.addEventListener('mouseleave', () => {
-		image9.style.opacity = '1';
-		image10.style.opacity = '0';
-	});
-</script>
+		image9.style.opacity = '1'
+		image10.style.opacity = '0'
+	})
 
-<!-- 
-<div
-	class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
-	id="item-0"
->
-	<div
-		class="flex justify-center items-center h-full rounded-md w-full bg-gray-800"
-	>
-		<img
-			style="max-width: 30%;
-			aspect-ratio: 1 / 1;"
-			class="object-contain"
-			src={Astra}
-			alt=""
-		/>
-	</div>
-</div>
--->
+	const cardImage6 = document.querySelector('.card-image6')
+	const image11 = document.getElementById('image11')
+	const image12 = document.getElementById('image12')
+
+	cardImage6.addEventListener('mouseenter', () => {
+		image11.style.opacity = '0'
+		image12.style.opacity = '1'
+	})
+
+	cardImage6.addEventListener('mouseleave', () => {
+		image11.style.opacity = '1'
+		image12.style.opacity = '0'
+	})
+</script>
 
 <style>
 	#item-0 {
