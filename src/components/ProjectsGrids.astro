@@ -1,4 +1,5 @@
 ---
+import Modal from './Modal.astro'
 import Astra from '/astra.webp'
 import Starbucks from '/starbucks.webp'
 import HM from '/h&m.webp'
@@ -52,7 +53,7 @@ import StarbucksBg from '/starbucksBg.png'
 				class="w-full cursor-pointer h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
 				id="item-0"
 			>
-				<div
+				<div id="openModalBtn"
 					class="card-image flex justify-center relative items-center h-full rounded-md w-full bg-gray-800"
 				>
 					<img
@@ -72,6 +73,8 @@ import StarbucksBg from '/starbucksBg.png'
 						alt=""
 					/>
 				</div>
+				<Modal title="Astras" content="Hola gente este es todo">
+				</Modal>
 			</div>
 			<div
 				class="w-full h-full flex items-center justify-center p-1 relative rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
