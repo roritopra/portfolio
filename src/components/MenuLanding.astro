@@ -6,7 +6,9 @@ import Linkedin from '/linkedin.svg'
 ---
 
 <header
-	data-aos="fade-down" data-aos-duration="700" data-aos-delay="100"
+	data-aos="fade-down"
+	data-aos-duration="700"
+	data-aos-delay="100"
 	id="landing-header"
 	class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white"
 >
@@ -33,10 +35,14 @@ import Linkedin from '/linkedin.svg'
 				<a href="#"><img src={Linkedin} alt="" /></a>
 			</li>
 			<li class="hidden xl:block sm:hidden">
-				<a href="https://github.com/roritopra"target='_blank'><img src={Github} alt="" /></a>
+				<a href="https://github.com/roritopra" target="_blank"
+					><img src={Github} alt="" /></a
+				>
 			</li>
 			<li class="hidden xl:block sm:hidden">
-				<a href="https://www.behance.net/danielfloa"target=_blank"><img src={Behance} alt="" /></a>
+				<a href="https://www.behance.net/danielfloa" target='_blank"'
+					><img src={Behance} alt="" /></a
+				>
 			</li>
 			<li class="block sm:block xl:hidden"><a href="#">Menu</a></li>
 		</ul>
@@ -96,4 +102,3 @@ import Linkedin from '/linkedin.svg'
 	const sectionElements = document.querySelectorAll('.landing-section')
 	sectionElements.forEach((section) => observer.observe(section))
 </script>
-

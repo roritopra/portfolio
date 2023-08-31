@@ -1,64 +1,68 @@
 ---
+
 ---
 
 <button id="openModalBtn">Abrir Modal</button>
+  
+  <div id="modalContainer">
+    <div id="modalContent">
+      <h2>Contenido del Modal</h2>
+      <p>Este es el contenido del modal. Puedes agregar lo que desees aquí.</p>
+      <button id="closeModalBtn">Cerrar</button>
+    </div>
+  </div>
 
-<div id="modalContainer">
-	<div id="modalContent">
-		<h2>Contenido del Modal</h2>
-		<p>Este es el contenido del modal. Puedes agregar lo que desees aquí.</p>
-		<button id="closeModalBtn">Cerrar</button>
-	</div>
-</div>
+  <script>
+    // Obtener referencias a los elementos del DOM
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const modalContainer = document.getElementById('modalContainer');
 
-<script>
-	// Obtener referencias a los elementos del DOM
-	const openModalBtn = document.getElementById('openModalBtn')
-	const closeModalBtn = document.getElementById('closeModalBtn')
-	const modalContainer = document.getElementById('modalContainer')
+// Abrir el modal al hacer clic en el botón
+openModalBtn.addEventListener('click', () => {
+  modalContainer.style.display = 'flex';
+});
 
-	// Abrir el modal al hacer clic en el botón
-	openModalBtn.addEventListener('click', () => {
-		modalContainer.style.display = 'flex'
-	})
+// Cerrar el modal al hacer clic en el botón de cerrar o en el fondo transparente
+function closeModal() {
+  modalContainer.style.display = 'none';
+}
 
-	// Cerrar el modal al hacer clic en el botón de cerrar o en el fondo transparente
-	function closeModal() {
-		modalContainer.style.display = 'none'
-	}
+closeModalBtn.addEventListener('click', closeModal);
+modalContainer.addEventListener('click', (event) => {
+  if (event.target === modalContainer) {
+    closeModal();
+  }
+});
 
-	closeModalBtn.addEventListener('click', closeModal)
-	modalContainer.addEventListener('click', (event) => {
-		if (event.target === modalContainer) {
-			closeModal()
-		}
-	})
-</script>
+  </script>
 
-<style>
-	#modalContainer {
-		z-index: 10000;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		display: none; /* Inicialmente oculto */
-	}
+  <style>
 
-	#modalContent {
-		background-color: white;
-		padding: 20px;
-		border-radius: 5px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		max-width: 80%;
-	}
+#modalContainer {
+   z-index: 10000; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; /* Inicialmente oculto */
+}
 
-	button {
-		margin-top: 10px;
-	}
-</style>
+#modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 80%;
+}
+
+button {
+  margin-top: 10px;
+}
+
+  </style>
