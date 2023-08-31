@@ -32,3 +32,19 @@
 		</div>
 	</section>
 </main>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const video = document.getElementById('myVideo')
+
+		// Reproduce el video desde el segundo cero al cargar la página
+		video.currentTime = 0
+		video.play()
+
+		// Cuando el video termine, configuramos el loop desde el segundo 10
+		video.addEventListener('ended', function () {
+			video.currentTime = 12
+			video.play()
+		})
+	})
+</script>

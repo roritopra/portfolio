@@ -6,8 +6,9 @@ import Linkedin from '/linkedin.svg'
 ---
 
 <header
+	data-aos="fade-down" data-aos-duration="700" data-aos-delay="100"
 	id="landing-header"
-	class="py-3 bg-black/20 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white"
+	class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white"
 >
 	<div class="flex flex-grow basis-0">
 		<a href="./" class="w-25px h-46px"><Logo /></a>
@@ -43,7 +44,7 @@ import Linkedin from '/linkedin.svg'
 
 	<div
 		id="menu-backdrop"
-		class={`absolute bg-black/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-10
+		class={`absolute bg-white/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-10
     `}
 	>
 	</div>
@@ -96,18 +97,3 @@ import Linkedin from '/linkedin.svg'
 	sectionElements.forEach((section) => observer.observe(section))
 </script>
 
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-		const video = document.getElementById('myVideo')
-
-		// Reproduce el video desde el segundo cero al cargar la página
-		video.currentTime = 0
-		video.play()
-
-		// Cuando el video termine, configuramos el loop desde el segundo 10
-		video.addEventListener('ended', function () {
-			video.currentTime = 12
-			video.play()
-		})
-	})
-</script>
