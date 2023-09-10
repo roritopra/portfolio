@@ -1,9 +1,15 @@
 ---
-const { title, content, id, linkg, linkb, linkp, tag, HTML, CSS } = Astro.props
-const launchStatus = tag ? 'HTML' : 'CSS'
----
+export interface Props {
+	title: string
+	content: string
+	linkg: string
+	linkb: string
+	linkp: string
+	html: string
+}
 
-<span id={id}></span>
+const { title, content, linkg, linkb, linkp, html } = Astro.props
+---
 
 <div
 	id="modalContainer"
@@ -54,20 +60,16 @@ const launchStatus = tag ? 'HTML' : 'CSS'
 					{content}
 				</p>
 			</div>
-			<div class="flex items-center flex-wrap px-6 pb-6">
-				<div class="gap-5 bg-gray-600 rounded-md">
-					<p
-						class:list={["text-center text-base text-white mx-3 my-1",
-							{
-								"bg-green-500": launchStatus === 'HTML',
-								"bg-blue-500": launchStatus === 'CSS'
-							}
-						]}						
-					>
-						{launchStatus}
-					</p>
-				</div>
-			</div>
+			<!-- If Tag -->
+			{
+				html && (
+					<div class="flex items-center flex-wrap px-6 pb-6">
+						<div class="gap-5">
+							<p class="gap-5 px-3 py-1 bg-gray-600 rounded-md">{html}</p>
+						</div>
+					</div>
+				)
+			}
 			<!-- Modal footer -->
 			<div
 				class="flex items-center justify-between p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
@@ -136,17 +138,14 @@ const launchStatus = tag ? 'HTML' : 'CSS'
 </div>
 
 <script>
-	// Obtener referencias a los elementos del DOM
 	const openModalBtn = document.getElementById('openModalBtn')
 	const closeModalBtn = document.getElementById('closeModalBtn')
 	const modalContainer = document.getElementById('modalContainer')
 
-	// Abrir el modal al hacer clic en el botón
 	openModalBtn.addEventListener('click', () => {
 		modalContainer.style.display = 'flex'
 	})
 
-	// Cerrar el modal al hacer clic en el botón de cerrar o en el fondo transparente
 	function closeModal() {
 		modalContainer.style.display = 'none'
 	}
