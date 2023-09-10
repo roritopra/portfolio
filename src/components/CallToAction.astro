@@ -1,7 +1,12 @@
 ---
+import bg from '/bg_call.webp'
 ---
 
-<section id="call">
+<section id="call" class="relative pt-24 pb-24
+">
+	<div class="section-background">
+		<img src={bg} alt="">
+	</div>
 	<div class="call-to-action relative z-20">
 		<div class="carousel">
 			<div class="carousel-track">
@@ -33,6 +38,27 @@
 		</a>
 	</div>
 </section>
+
+<style>
+	.section-background {
+		height: auto;
+		left: 100%;
+		margin-top: -33%;
+		transform: translateX(-50%);
+		width: 200%;
+		z-index: 999;
+		mix-blend-mode: lighten;
+		pointer-events: none;
+		position: absolute;
+		bottom: 0;
+	}
+	.section-background img {
+		z-index: 60;
+		left: 0;
+		top: 0;
+		width: 50%;
+	}
+</style>
 
 <style>
 	section {

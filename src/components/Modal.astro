@@ -1,5 +1,6 @@
 ---
-const { title, content, id, linkg, linkb, linkp } = Astro.props
+const { title, content, id, linkg, linkb, linkp, tag, HTML, CSS } = Astro.props
+const launchStatus = tag ? 'HTML' : 'CSS'
 ---
 
 <span id={id}></span>
@@ -45,18 +46,34 @@ const { title, content, id, linkg, linkb, linkp } = Astro.props
 			</div>
 			<!-- Modal body -->
 			<div class="p-6 space-y-6">
-				<p class="text-base leading-relaxed text-gray-500 dark:text-gray-400" content? = display: "none">
+				<p
+					class="text-base leading-relaxed text-gray-400"
+					content?="display:"
+					"none"
+				>
 					{content}
 				</p>
+			</div>
+			<div class="flex items-center flex-wrap px-6 pb-6">
+				<div class="gap-5 bg-gray-600 rounded-md">
+					<p
+						class:list={["text-center text-base text-white mx-3 my-1",
+							{
+								"bg-green-500": launchStatus === 'HTML',
+								"bg-blue-500": launchStatus === 'CSS'
+							}
+						]}						
+					>
+						{launchStatus}
+					</p>
+				</div>
 			</div>
 			<!-- Modal footer -->
 			<div
 				class="flex items-center justify-between p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
 			>
-				<div class="flex items-center space-x-2">
-					<a href={linkb}
-					target="_blank"
-					style="display: ${linkb ? 'block' : 'none'}"
+				<div class="flex items-center gap-3 space-x-2">
+					<a href={linkb} target="_blank"
 						><svg
 							width="30"
 							height="30"
@@ -75,9 +92,7 @@ const { title, content, id, linkg, linkb, linkp } = Astro.props
 								fill="white"></path>
 						</svg>
 					</a>
-					<a href={linkg}
-					target="_blank"
-					style="display: ${linkg ? 'block' : 'none'}"
+					<a href={linkg} target="_blank"
 						><svg
 							width="30"
 							height="30"
@@ -94,9 +109,7 @@ const { title, content, id, linkg, linkb, linkp } = Astro.props
 					</a>
 				</div>
 				<div class="flex items-center">
-					<a href={linkp}
-					target="_blank"
-					style="display: ${linkp ? 'block' : 'none'}"
+					<a href={linkp} target="_blank"
 						><svg
 							width="20"
 							height="20"
