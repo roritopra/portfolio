@@ -1,11 +1,13 @@
 ---
-import bg from '/bg_call.webp'
+import bg from '../assets/bg_call.webp'
+
+import { Image } from 'astro:assets';
 ---
 
 <section id="call" class="relative pt-24 pb-24
 ">
 	<div class="section-background">
-		<img src={bg} alt="">
+		<Image src={bg} alt="" format='webp' quality={"mid"} width={1440} height={572} >
 	</div>
 	<div class="call-to-action relative z-20">
 		<div class="carousel">
