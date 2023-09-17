@@ -1,8 +1,10 @@
 ---
 import Logo from './Logo.astro'
-import Behance from '/behance.svg'
-import Github from '/github.svg'
-import Linkedin from '/linkedin.svg'
+import Behance from '../assets/behance.svg'
+import Github from '../assets/github.svg'
+import Linkedin from '../assets/linkedin.svg'
+
+import { Image } from 'astro:assets'
 ---
 
 <header
@@ -32,16 +34,16 @@ import Linkedin from '/linkedin.svg'
 			class="flex items-center text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
 		>
 			<li class="hidden xl:block sm:hidden">
-				<a href="#"><img src={Linkedin} alt="" /></a>
+				<a href="#"><Image src={Linkedin} alt="" /></a>
 			</li>
 			<li class="hidden xl:block sm:hidden">
 				<a href="https://github.com/roritopra" target="_blank"
-					><img src={Github} alt="" /></a
+					><Image src={Github} alt="" /></a
 				>
 			</li>
 			<li class="hidden xl:block sm:hidden">
 				<a href="https://www.behance.net/danielfloa" target='_blank"'
-					><img src={Behance} alt="" /></a
+					><Image src={Behance} alt="" /></a
 				>
 			</li>
 			<li class="block sm:block xl:hidden"><a href="#">Menu</a></li>

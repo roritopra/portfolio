@@ -1,20 +1,22 @@
 ---
-import JS from '/js.png'
-import HTML from '/html.png'
-import CSS from '/css.png'
-import SASS from '/sass.png'
-import Tailwind from '/tailwind.png'
-import LogoReact from '/React.png'
-import LogoAstro from '/astro.png'
-import Kotlin from '/kotlin.png'
-import Git from '/git.png'
-import GitHub from '/github.png'
-import Visual from '/visualstudio.png'
-import Figma from '/figma.png'
-import Photoshop from '/photoshop.png'
-import AE from '/after-effects.png'
-import Android from '/android-studio.png'
-import BgSkills from '/bg_skills.webp'
+import JS from '../assets/js.png'
+import HTML from '../assets/html.png'
+import CSS from '../assets/css.png'
+import SASS from '../assets/sass.png'
+import Tailwind from '../assets/tailwind.png'
+import LogoReact from '../assets/React.png'
+import LogoAstro from '../assets/astro.png'
+import Kotlin from '../assets/kotlin.png'
+import Git from '../assets/git.png'
+import GitHub from '../assets/github.png'
+import Visual from '../assets/visualstudio.png'
+import Figma from '../assets/figma.png'
+import Photoshop from '../assets/photoshop.png'
+import AE from '../assets/after-effects.png'
+import Android from '../assets/android-studio.png'
+import BgSkills from '../assets/bg_skills.webp'
+
+import { Image } from 'astro:assets'
 ---
 
 <style>
@@ -43,7 +45,7 @@ import BgSkills from '/bg_skills.webp'
 	class="flex justify-center flex-col items-center w-screen relative z-10"
 >
 	<div class="section-background">
-		<img src={BgSkills} alt="" />
+		<Image src={BgSkills} alt="" quality={"mid"} width={2310} height={1565} />
 	</div>
 	<div class="flex justify-center flex-col items-center mb-20">
 		<h6
@@ -60,7 +62,7 @@ background-clip: text;
 		</h2>
 	</div>
 	<article class="flex flex-wrap justify-center items-center gap-12 mb-44">
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom"
 			data-tooltip-placement="bottom"
 			src={JS}
@@ -74,7 +76,7 @@ background-clip: text;
 			Javascript
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom2"
 			data-tooltip-placement="bottom"
 			src={HTML}
@@ -88,7 +90,7 @@ background-clip: text;
 			HTML
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom3"
 			data-tooltip-placement="bottom"
 			src={CSS}
@@ -102,7 +104,7 @@ background-clip: text;
 			CSS
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom4"
 			data-tooltip-placement="bottom"
 			src={SASS}
@@ -116,7 +118,7 @@ background-clip: text;
 			SASS
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom5"
 			data-tooltip-placement="bottom"
 			src={Tailwind}
@@ -130,7 +132,7 @@ background-clip: text;
 			Tailwind
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom6"
 			data-tooltip-placement="bottom"
 			src={LogoReact}
@@ -144,7 +146,7 @@ background-clip: text;
 			React
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom7"
 			data-tooltip-placement="bottom"
 			src={LogoAstro}
@@ -158,7 +160,7 @@ background-clip: text;
 			Astro
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom8"
 			data-tooltip-placement="bottom"
 			src={Kotlin}
@@ -179,7 +181,7 @@ background-clip: text;
 		</h2>
 	</div>
 	<article class="flex flex-wrap justify-center items-center gap-12 mb-32">
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom9"
 			data-tooltip-placement="bottom"
 			src={Git}
@@ -193,7 +195,7 @@ background-clip: text;
 			Git
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom10"
 			data-tooltip-placement="bottom"
 			src={GitHub}
@@ -207,7 +209,7 @@ background-clip: text;
 			GitHub
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom11"
 			data-tooltip-placement="bottom"
 			src={Visual}
@@ -221,7 +223,7 @@ background-clip: text;
 			Visual Studio
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom12"
 			data-tooltip-placement="bottom"
 			src={Figma}
@@ -235,7 +237,7 @@ background-clip: text;
 			Figma
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom13"
 			data-tooltip-placement="bottom"
 			src={Photoshop}
@@ -249,7 +251,7 @@ background-clip: text;
 			Photoshop
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom14"
 			data-tooltip-placement="bottom"
 			src={AE}
@@ -263,7 +265,7 @@ background-clip: text;
 			After Effects
 			<div class="tooltip-arrow" data-popper-arrow></div>
 		</div>
-		<img
+		<Image
 			data-tooltip-target="tooltip-bottom15"
 			data-tooltip-placement="bottom"
 			src={Android}

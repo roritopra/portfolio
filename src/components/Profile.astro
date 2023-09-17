@@ -1,6 +1,7 @@
 ---
-import Modal from './Modal.astro'
-import profile from '/person.webp'
+import profile from '../assets/person.webp'
+
+import { Image } from 'astro:assets'
 ---
 
 <style>
@@ -42,7 +43,12 @@ background-repeat: no-repeat;"
 					proposals focused on digital design and user-oriented experiences.
 				</p>
 			</div>
-			<img class="w-full rounded-t-lg h-96 rounded-r-lg" src={profile} alt="" />
+			<Image
+				class="w-full rounded-t-lg h-96 rounded-r-lg"
+				src={profile}
+				alt=""
+				quality={'mid'}
+			/>
 		</div>
 	</article>
 </section>
