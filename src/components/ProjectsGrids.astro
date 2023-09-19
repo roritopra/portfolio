@@ -11,7 +11,9 @@ import BitxBg from '../assets/bitxBg.png'
 import BankBg from '../assets/bankBg.png'
 import HMBg from '../assets/hmBg.png'
 import StarbucksBg from '../assets/starbucksBg.png'
+import projects from '../content/modalContent.js'
 ---
+
 <section
 	id="projects"
 	style="grid-template-columns: repeat(14, minmax(0, 1fr));
@@ -56,7 +58,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image1"
 						class="object-contain py-5 transition-opacity duration-500"
 						src={Astra.src}
-						alt=""
+						alt="astra image"
 					/>
 					<img
 						style="max-width: 100%;
@@ -64,16 +66,16 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image2"
 						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={AstraBg.src}
-						alt=""
+						alt="Astra image"
 					/>
 				</div>
 				<Modal
-					title="ASTRA CHANNEL"
-					content="I decided to create a television channel on the concept of astronomy for the general public. lots of history and technology like space, rockets, planets, stars and more that humans haven't gotten to witness."
-					linkb="https://www.behance.net/gallery/156476715/ASTRA-Channel"
-					linkg='https://ww'
-					linkp='https://ww'
-					html='HTML'
+					title={projects[0].title}
+					content={projects[0].content}
+					linkb={projects[0].linkb}
+					linkg={projects[0].linkg}
+					linkp={projects[0].linkp}
+					html="HTML"
 				/>
 			</div>
 			<div
@@ -89,7 +91,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image9"
 						class="object-contain py-5 transition-opacity duration-500"
 						src={Starbucks.src}
-						alt=""
+						alt="starbucks image"
 					/>
 					<img
 						style="max-width: 100%;
@@ -97,9 +99,17 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image10"
 						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={StarbucksBg.src}
-						alt=""
+						alt="starbucks image"
 					/>
 				</div>
+				<Modal
+					title={projects[1].title}
+					content={projects[1].content}
+					linkb={projects[1].linkb}
+					linkg={projects[1].linkg}
+					linkp={projects[1].linkp}
+					html="HTML"
+				/>
 			</div>
 			<div
 				class="w-full h-full flex items-center justify-center p-1 relative rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
@@ -116,7 +126,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						class="object-contain py-5 transition-opacity duration-500"
 						id="image7"
 						src={HM.src}
-						alt=""
+						alt="h&m image"
 					/>
 					<img
 						style="max-width: 100%;
@@ -124,7 +134,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image8"
 						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={HMBg.src}
-						alt=""
+						alt="h&m image"
 					/>
 				</div>
 			</div>
@@ -140,7 +150,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						aspect-ratio: 1 / 1;"
 						class="object-contain"
 						src={Rodro.src}
-						alt=""
+						alt="rodro image"
 					/>
 				</div>
 			</div>
@@ -157,7 +167,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image5"
 						class="object-contain py-5 transition-opacity duration-500"
 						src={Bank.src}
-						alt=""
+						alt="bank image"
 					/>
 					<img
 						style="max-width: 100%;
@@ -165,7 +175,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image6"
 						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={BankBg.src}
-						alt=""
+						alt="bank image"
 					/>
 				</div>
 			</div>
@@ -182,7 +192,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image3"
 						class="object-contain py-5 transition-opacity duration-500"
 						src={Bitx.src}
-						alt=""
+						alt="bitx image"
 					/>
 					<img
 						style="max-width: 100%;
@@ -190,7 +200,7 @@ import StarbucksBg from '../assets/starbucksBg.png'
 						id="image4"
 						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
 						src={BitxBg.src}
-						alt=""
+						alt="bitx image"
 					/>
 				</div>
 			</div>
