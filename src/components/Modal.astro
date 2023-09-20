@@ -1,5 +1,5 @@
 ---
-const { title, content, linkg, linkb, linkp, html } = Astro.props
+const { title, content, linkg, linkb, linkp, tags } = Astro.props
 ---
 
 <div
@@ -54,7 +54,7 @@ const { title, content, linkg, linkb, linkp, html } = Astro.props
 			<!-- If Tag -->
 					<div class="flex items-center flex-wrap px-6 pb-6">
 						<div class="gap-5">
-							<p class="gap-5 px-3 py-1 bg-gray-600 rounded-md">{html}</p>
+							<p class="gap-5 px-3 py-1 bg-gray-600 rounded-md">{tags}</p>
 						</div>
 					</div>
 			<!-- Modal footer -->
