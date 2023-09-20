@@ -1,5 +1,6 @@
 ---
 import Modal from './Modal.astro'
+
 import Astra from '../assets/astra.webp'
 import Starbucks from '../assets/starbucks.webp'
 import HM from '../assets/h&m.webp'
@@ -11,7 +12,8 @@ import BitxBg from '../assets/bitxBg.png'
 import BankBg from '../assets/bankBg.png'
 import HMBg from '../assets/hmBg.png'
 import StarbucksBg from '../assets/starbucksBg.png'
-import projects from '../content/modalContent.js'
+
+import json from '../content/data.json'
 ---
 
 <section
@@ -70,12 +72,12 @@ import projects from '../content/modalContent.js'
 					/>
 				</div>
 				<Modal
-					title={projects[0].title}
-					content={projects[0].content}
-					linkb={projects[0].linkb}
-					linkg={projects[0].linkg}
-					linkp={projects[0].linkp}
-					tags={projects[0].tags}
+					title={json[0].title}
+					content={json[0].content}
+					linkb={json[0].linkb}
+					linkg={json[0].linkg}
+					linkp={json[0].linkp}
+					tags={json[0].tags}
 				/>
 			</div>
 			<div
@@ -102,14 +104,6 @@ import projects from '../content/modalContent.js'
 						alt="starbucks image"
 					/>
 				</div>
-				<Modal
-					title={projects[1].title}
-					content={projects[1].content}
-					linkb={projects[1].linkb}
-					linkg={projects[1].linkg}
-					linkp={projects[1].linkp}
-					html="HTML"
-				/>
 			</div>
 			<div
 				class="w-full h-full flex items-center justify-center p-1 relative rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
