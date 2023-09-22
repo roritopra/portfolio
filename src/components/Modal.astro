@@ -52,11 +52,11 @@ const { title, content, linkg, linkb, linkp, tags } = Astro.props
 				</p>
 			</div>
 			<!-- If Tag -->
-					<div class="flex items-center flex-wrap px-6 pb-6">
-						<div class="gap-5">
-							<p class="gap-5 px-3 py-1 bg-gray-600 rounded-md">{tags}</p>
-						</div>
-					</div>
+			{tags ? 
+				<div class="flex items-center flex-wrap px-6 pb-6 gap-5">
+					{tags.map(tag => <p class="gap-5 px-3 py-1 bg-gray-600 rounded-md">{tag}</p>)}
+				</div> : null}
+					
 			<!-- Modal footer -->
 			<div
 				class="flex items-center justify-between p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
