@@ -75,6 +75,7 @@ import json from '../content/data.json'
 				</div>
 				<Modal
 					id="modalContainer"
+					close="closeModalBtn"
 					title={json[0].title}
 					content={json[0].content}
 					linkb={json[0].linkb}
@@ -84,6 +85,7 @@ import json from '../content/data.json'
 				/>
 				<Modal
 					id="modalContainer2"
+					close="closeModalBtn2"
 					title={json[1].title}
 					content={json[1].content}
 					linkb={json[1].linkb}
@@ -91,12 +93,42 @@ import json from '../content/data.json'
 					linkp={json[1].linkp}
 					tags={json[1].tags}
 				/>
+				<Modal
+					id="modalContainer3"
+					close="closeModalBtn3"
+					title={json[2].title}
+					content={json[2].content}
+					linkb={json[2].linkb}
+					linkg={json[2].linkg}
+					linkp={json[2].linkp}
+					tags={json[2].tags}
+				/>
+				<Modal
+					id="modalContainer4"
+					close="closeModalBtn4"
+					title={json[3].title}
+					content={json[3].content}
+					linkb={json[3].linkb}
+					linkg={json[3].linkg}
+					linkp={json[3].linkp}
+					tags={json[3].tags}
+				/>
+				<Modal
+					id="modalContainer5"
+					close="closeModalBtn5"
+					title={json[4].title}
+					content={json[4].content}
+					linkb={json[4].linkb}
+					linkg={json[4].linkg}
+					linkp={json[4].linkp}
+					tags={json[4].tags}
+				/>
 			</div>
 			<div
 				class="w-full h-full flex items-center justify-center p-1 relative rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
 				id="item-1"
 			>
-				<div 
+				<div
 					id="openModalBtn2"
 					class="card-image5 flex justify-center relative items-center h-full rounded-md w-full bg-[#1E3932]"
 				>
@@ -125,6 +157,7 @@ import json from '../content/data.json'
 				<div
 					style="background: linear-gradient(180deg, #FFF 0%, #D7D0CF 100%);
 				"
+					id="openModalBtn3"
 					class="card-image4 flex justify-center relative items-center h-full rounded-md w-full"
 				>
 					<img
@@ -166,6 +199,7 @@ import json from '../content/data.json'
 				id="item-4"
 			>
 				<div
+					id="openModalBtn4"
 					class="card-image3 flex justify-center relative items-center h-full rounded-md w-full bg-white"
 				>
 					<img
@@ -191,6 +225,7 @@ import json from '../content/data.json'
 				id="item-5"
 			>
 				<div
+					id="openModalBtn5"
 					class="card-image2 flex justify-center relative items-center h-full rounded-md w-full bg-gray-800"
 				>
 					<img

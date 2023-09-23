@@ -1,5 +1,5 @@
 ---
-const { title, content, linkg, linkb, linkp, tags, id} = Astro.props
+const { title, content, linkg, linkb, linkp, tags, id, close} = Astro.props
 ---
 
 <div
@@ -20,7 +20,7 @@ const { title, content, linkg, linkb, linkp, tags, id} = Astro.props
 					{title}
 				</h3>
 				<button
-					id="closeModalBtn"
+					id={close}
 					type="button"
 					class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
 				>
@@ -118,7 +118,7 @@ const { title, content, linkg, linkb, linkp, tags, id} = Astro.props
 				tags ? (
 					<div class="flex items-center flex-wrap px-6 pb-5 gap-3 border-t border-gray-200 rounded-b dark:border-gray-600 pt-5">
 						{tags.map((tag) => (
-							<p class="gap-3 px-3 py-1 bg-gray-600 rounded-md">{tag}</p>
+							<p class="gap-3 text-sm text-white px-3 py-1 bg-gray-600 rounded-md">{tag}</p>
 						))}
 					</div>
 				) : null
@@ -128,6 +128,9 @@ const { title, content, linkg, linkb, linkp, tags, id} = Astro.props
 </div>
 
 <script>
+
+	/* --------- Modal4 astra -------- */
+
 	const openModalBtn = document.getElementById('openModalBtn')
 	const closeModalBtn = document.getElementById('closeModalBtn')
 	const modalContainer = document.getElementById('modalContainer')
@@ -147,10 +150,11 @@ const { title, content, linkg, linkb, linkp, tags, id} = Astro.props
 		}
 	})
 
+	/* --------- Modal2 starbucks -------- */
 
 	const openModalBtn2 = document.getElementById('openModalBtn2')
 	const modalContainer2 = document.getElementById('modalContainer2')
-	const closeModalBtn2 = document.getElementById('closeModalBtn')
+	const closeModalBtn2 = document.getElementById('closeModalBtn2')
 
 	openModalBtn2.addEventListener('click', () => {
 		modalContainer2.style.display = 'flex'
@@ -166,31 +170,84 @@ const { title, content, linkg, linkb, linkp, tags, id} = Astro.props
 			closeModal2()
 		}
 	})
+
+	/* --------- Modal3 h&m -------- */
+
+	const openModalBtn3 = document.getElementById('openModalBtn3')
+	const modalContainer3 = document.getElementById('modalContainer3')
+	const closeModalBtn3 = document.getElementById('closeModalBtn3')
+
+	openModalBtn3.addEventListener('click', () => {
+		modalContainer3.style.display = 'flex'
+	})
+
+	function closeModal3() {
+		modalContainer3.style.display = 'none'
+	}
+
+	closeModalBtn3.addEventListener('click', closeModal3)
+	modalContainer3.addEventListener('click', (event) => {
+		if (event.target === modalContainer3) {
+			closeModal3()
+		}
+	})
+
+/* --------- Modal4 bancow -------- */
+
+	const openModalBtn4 = document.getElementById('openModalBtn4')
+	const modalContainer4 = document.getElementById('modalContainer4')
+	const closeModalBtn4 = document.getElementById('closeModalBtn4')
+
+	openModalBtn4.addEventListener('click', () => {
+		modalContainer4.style.display = 'flex'
+	})
+
+	function closeModal4() {
+		modalContainer4.style.display = 'none'
+	}
+
+	closeModalBtn4.addEventListener('click', closeModal4)
+	modalContainer4.addEventListener('click', (event) => {
+		if (event.target === modalContainer4) {
+			closeModal4()
+		}
+	})
+
+/* --------- Modal5 bitx -------- */
+
+	const openModalBtn5 = document.getElementById('openModalBtn5')
+	const modalContainer5 = document.getElementById('modalContainer5')
+	const closeModalBtn5 = document.getElementById('closeModalBtn5')
+
+	openModalBtn5.addEventListener('click', () => {
+		modalContainer5.style.display = 'flex'
+	})
+
+	function closeModal5() {
+		modalContainer5.style.display = 'none'
+	}
+
+	closeModalBtn5.addEventListener('click', closeModal5)
+	modalContainer5.addEventListener('click', (event) => {
+		if (event.target === modalContainer5) {
+			closeModal5()
+		}
+	})
 </script>
 
 <style>
-	#modalContainer {
+	#modalContainer,
+	#modalContainer2,
+	#modalContainer3,
+	#modalContainer4,
+	#modalContainer5 {
 		z-index: 10000;
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		display: none; /* Inicialmente oculto */
-	}
-
-	#modalContainer2 {
-		z-index: 10000;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente */
+		background-color: rgba(0, 0, 0, 0.74); /* Fondo transparente */
 		display: flex;
 		justify-content: center;
 		align-items: center;
