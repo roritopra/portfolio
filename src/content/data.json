@@ -30,8 +30,8 @@
 		"id": 4,
 		"title": "Banco W",
 		"content": "The Colombian bank, Banco W approached us to find ways to get closer to its customers, seeking that they have a better experience through the bank's digital channels and that they can provide them with information in a clear and precise manner.",
-		"lingb": "https://github.com/alejandromedina1/banco-w-site",
-		"linkg": "https://www.behance.net/gallery/174124551/Banco-W-UXUI-Project",
+		"linkb": "https://www.behance.net/gallery/174124551/Banco-W-UXUI-Project",
+		"linkg": "https://github.com/alejandromedina1/banco-w-site",
 		"linkp": "https://banco-w-site.vercel.app/",
 		"tags": ["HTML", "SCSS", "JavaScript", "Bootstrap", "Figma"]
 	},
