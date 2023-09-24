@@ -3,13 +3,18 @@ import Layout from '../layouts/Layout.astro'
 import MenuLanding from '../components/MenuLanding.astro'
 import HeaderLanding from '../components/HeaderLanding.astro'
 import Profile from '../components/Profile.astro'
-import ProjectsGrids from '../components/ProjectsGrids.astro';
-import Skills from '../components/Skills.astro';
-import CallToAction from '../components/CallToAction.astro';
-import Modal from '../components/Modal.astro';
+import ProjectsGrids from '../components/ProjectsGrids.astro'
+import Skills from '../components/Skills.astro'
+import CallToAction from '../components/CallToAction.astro'
+import Rodro from '../assets/rodro.webp'
+
+import { Image } from 'astro:assets'
 ---
 
 <Layout title="Rodro | UX/Front Dev">
+	<div class="animate">
+		<Image class="title" src={Rodro} alt="Rodro" quality={'mid'} />
+	</div>
 	<div class="noise bg-noise"></div>
 	<MenuLanding />
 	<main
@@ -44,22 +49,117 @@ import Modal from '../components/Modal.astro';
 		<div class="">
 			<CallToAction />
 		</div>
-		<Modal />
 	</main>
 </Layout>
 
 <style>
 	.noise {
-	pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    content: "";
-    opacity: .020;
-    z-index: 1000;
-    pointer-events: none;
-    background-image: url(/noise.gif);
-}
+		pointer-events: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		content: '';
+		opacity: 0.02;
+		z-index: 1000;
+		pointer-events: none;
+		background-image: url(/noise.gif);
+	}
+	.animate {
+		position: absolute;
+		z-index: 999;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		background: #0c1014;
+		height: 100vh;
+		width: 100vw;
+		inset: 0;
+		animation: lift 0.8s ease-in-out;
+		animation-delay: 1.6s;
+		animation-fill-mode: forwards;
+	}
+
+	.title {
+		font-family: 'Lexend Deca', sans-serif;
+		animation: wave 0.4s, jump 1s;
+		position: relative;
+		width: 10%;
+		top: 0%;
+		left: 0%;
+		right: 50%;
+		transform: translate(0%, 0%);
+		opacity: 1;
+		z-index: 3;
+		animation-fill-mode: forwards;
+	}
+
+	span:nth-of-type(1) {
+		animation: wave 0.4s, jump 1.1s ease-in-out alternate 0.05s;
+	}
+
+	span:nth-of-type(2) {
+		animation: wave 0.4s, jump 1.1s ease-in-out alternate 0.1s;
+	}
+
+	span:nth-of-type(3) {
+		animation: wave 0.4s, jump 1.1s ease-in-out alternate 0.15s;
+	}
+
+	span:nth-of-type(4) {
+		animation: wave 0.4s, jump 1.1s ease-in-out alternate 0.2s;
+	}
+
+	span:nth-of-type(5) {
+		animation: wave 0.4s, jump 1.1s ease-in-out alternate 0.25s;
+	}
+
+	span:nth-of-type(6) {
+		animation: wave 0.4s, jump 1.1s ease-in-out alternate 0.3s;
+	}
+
+	@keyframes wave {
+		0% {
+			top: 0%;
+		}
+		100% {
+			top: 0%;
+		}
+	}
+	@keyframes jump {
+		0% {
+			transform: translate3d(0, 0, 0);
+			opacity: 0;
+		}
+		90% {
+			transform: translate3d(0, -16%, 0);
+			opacity: 1;
+		}
+		100% {
+			transform: translate3d(0, -16%, 0);
+			opacity: 1;
+		}
+	}
+	@keyframes lift {
+		0% {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+			visibility: visible;
+		}
+		100% {
+			transform: translate3d(0, -100%, 0);
+			opacity: 1;
+			visibility: hidden;
+		}
+	}
+	@keyframes appear {
+		0% {
+			visibility: hidden;
+		}
+		100% {
+			visibility: visible;
+		}
+	}
 </style>
