@@ -32,7 +32,13 @@ background-repeat: no-repeat;"
 				>
 					About
 				</h5>
-				<h2 class="text-white font-bold text-5xl mb-3">Developer</h2>
+				<div class="mb-3 overflow-hidden box-content h-[3.5rem]">
+					<h2 class="text-white block font-bold text-5xl words">Rodro</h2>
+					<h2 class="text-white block font-bold text-5xl words">UX</h2>
+					<h2 class="text-white block font-bold text-5xl words">Gamer</h2>
+					<h2 class="text-white block font-bold text-5xl words">Designer</h2>
+					<h2 class="text-white block font-bold text-5xl words">Developer</h2>
+				</div>
 				<p class="text-[#C2C2C2]">
 					I am Juan Rodriguez, <span class="text-white font-medium"
 						>Interactive Media Designer</span
@@ -52,3 +58,38 @@ background-repeat: no-repeat;"
 		</div>
 	</article>
 </section>
+
+<style>
+	.words {
+		display: block;
+		height: 100%;
+		animation: spin_words 12s infinite;
+	}
+
+	@keyframes spin_words{
+    10%{
+        transform: translateY(-112%);
+    }
+    25%{
+        transform: translateY(-100%);
+    }
+    35%{
+        transform: translateY(-212%);
+    }
+    50%{
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-312%);
+    }
+    75%{
+        transform: translateY(-300%);
+    }
+    85%{
+        transform: translateY(-412%);
+    }
+    100%{
+        transform: translateY(-400%);
+    }
+}
+</style>
