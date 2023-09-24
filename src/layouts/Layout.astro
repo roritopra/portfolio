@@ -1,20 +1,20 @@
---- 
+---
 interface Props {
-	title: string;
+	title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/Capa 9.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 		<title>{title}</title>
 		<style>
 			body {
@@ -49,30 +49,56 @@ const { title } = Astro.props;
 		<div class="cursor-dot"></div>
 		<div class="cursor-outline"></div>
 		<slot />
-		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+		<script
+			is:inline
+			src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+		></script>
 		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script is:inline>
-			AOS.init();
+			AOS.init()
 		</script>
 		<script>
-			const cursorDot = document.querySelector('.cursor-dot') as HTMLElement;
-			const cursorOutline = document.querySelector('.cursor-outline');
+			const cursorDot = document.querySelector('.cursor-dot') as HTMLElement
+			const cursorOutline = document.querySelector('.cursor-outline')
 
-			window.addEventListener("mousemove", function (e) {
-				const posX = e.clientX;
-				const posY = e.clientY;
+			function changeCursorColorOnHover(event) {
+				const isLink = event.target.tagName.toLowerCase() === 'a'
 
-				cursorDot.style.left = `${posX}px`;
-				cursorDot.style.top = `${posY}px`;
+				if (isLink) {
+					cursorDot.style.background = '#00EBA6'
+					cursorOutline.style.borderColor = '#00EBA6'
+					cursorOutline.style.background = 'rgba(0, 235, 166, 0.50)'
+				} else {
+					cursorDot.style.background = '#fff'
+					cursorOutline.style.borderColor = 'hsl(0, 0%, 100%, 0.5)'
+					cursorOutline.style.background = 'rgba(0, 235, 166, 0.00)'
+				}
+			}
 
-				cursorOutline.animate({
-					left: `${posX}px`,
-					top: `${posY}px`
-				}, {
-					duration: 500,
-					easing: 'ease-out',
-					fill: 'forwards'
-				})
+			window.addEventListener('mousemove', function (e) {
+				const posX = e.clientX
+				const posY = e.clientY
+
+				cursorDot.style.left = `${posX}px`
+				cursorDot.style.top = `${posY}px`
+
+				cursorOutline.animate(
+					{
+						left: `${posX}px`,
+						top: `${posY}px`,
+					},
+					{
+						duration: 500,
+						easing: 'ease-out',
+						fill: 'forwards',
+					}
+				)
+			})
+
+			document.addEventListener('mouseover', changeCursorColorOnHover)
+			document.addEventListener('mouseout', () => {
+				cursorDot.style.background = '#fff'
+				cursorOutline.style.borderColor = 'hsl(0, 0%, 100%, 0.5)'
 			})
 		</script>
 	</body>
