@@ -37,14 +37,11 @@
 	document.addEventListener('DOMContentLoaded', function () {
     const video = document.getElementById('myVideo')
 
-    // Establece un retraso de 2 segundos antes de iniciar la reproducción del video
     setTimeout(function () {
-        // Reproduce el video desde el segundo cero después de 2 segundos
         video.currentTime = 0
         video.play()
-    }, 1500); // 2000 milisegundos (2 segundos)
+    }, 1500); 
 
-    // Cuando el video termine, configuramos el loop desde el segundo 10
     video.addEventListener('ended', function () {
         video.currentTime = 12
         video.play()
