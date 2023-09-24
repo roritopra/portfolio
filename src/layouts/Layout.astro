@@ -63,8 +63,9 @@ const { title } = Astro.props
 
 			function changeCursorColorOnHover(event) {
 				const isLink = event.target.tagName.toLowerCase() === 'a'
+				const isImg = event.target.tagName.toLowerCase() === 'img'
 
-				if (isLink) {
+				if (isLink || isImg) {
 					cursorDot.style.background = '#00EBA6'
 					cursorOutline.style.borderColor = '#00EBA6'
 					cursorOutline.style.background = 'rgba(0, 235, 166, 0.50)'
