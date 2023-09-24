@@ -12,6 +12,7 @@ import BitxBg from '../assets/bitxBg.png'
 import BankBg from '../assets/bankBg.png'
 import HMBg from '../assets/hmBg.png'
 import StarbucksBg from '../assets/starbucksBg.png'
+import BgProjects from '../assets/bg_projects.webp'
 
 import { Image } from 'astro:assets'
 
@@ -20,13 +21,12 @@ import json from '../content/data.json'
 
 <section
 	id="projects"
-	style="grid-template-columns: repeat(14, minmax(0, 1fr));
-	background-size: auto 97%;
-	background-image: url(/bg_projects.webp);
-	background-position: center;
-	background-repeat: no-repeat;"
+	style="grid-template-columns: repeat(14, minmax(0, 1fr));"
 	class="relative h-full px-12 grid grid-cols-12 z-50"
 >
+	<div class="section-background">
+		<Image src={BgProjects} alt="" format='webp' quality={"mid"}>
+	</div>
 	<article
 		style="grid-column: 4 / 12;"
 		class="flex flex-col justify-center items-center"
@@ -322,6 +322,26 @@ import json from '../content/data.json'
 	})
 	*/
 </script>
+
+<style>
+	.section-background {
+		height: auto;
+		left: 100%;
+		transform: translateX(-55%);
+		width: 200%;
+		z-index: 1;
+		mix-blend-mode: lighten;
+		pointer-events: none;
+		position: absolute;
+		bottom: 0%;
+	}
+	.section-background img {
+		z-index: 60;
+		left: 0;
+		top: 0;
+		width: 60%;
+	}
+</style>
 
 <style>
 	#item-0 {
