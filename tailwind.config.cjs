@@ -22,6 +22,16 @@ module.exports = {
 			}	
 		},
 	},
+	screens: {
+		sm: '640px',
+		md: '768px',
+		lg: '1024px',
+		xl: '1280px',
+		maxSm: {'max': '640px'},
+		maxMd: {'max': '768px'},
+		maxLg: {'max': '1024px'},
+		maxXl: {'max': '1280px'}
+	},
 	plugins: [
 		require('flowbite/plugin')
 	],
