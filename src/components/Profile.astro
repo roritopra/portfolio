@@ -16,45 +16,47 @@ import { Image } from 'astro:assets'
 background-image: url(/bg_profile.webp), url(/bg_profile.webp);
 background-position: calc(-945px - var(--scrollY)), calc(100% + -3px + var(--scrollY)), 100%;
 background-repeat: no-repeat;"
-	class="flex justify-center items-center h-screen w-screen overflow-hidden relative z-10"
+	class="flex justify-center items-center py-72 w-screen overflow-hidden relative z-10 max-md:px-6"
 >
 	<article
 		class="max-w-3xl w-full rounded-lg bg-gradient-to-t from-[#03B381] to-[#3B4755] p-1 drop-shadow-[0px_6px_80px_rgba(0,235,166,0.20)]"
 	>
-		<div class="bg-gray-800 flex items-center flex-row rounded-lg">
+		<div class="bg-gray-800 flex items-center flex-row rounded-lg max-md:flex-col">
 			<div class="flex flex-col justify-between p-4 leading-normal w/">
 				<h5
 					style="background: var(--titlessubtitles, linear-gradient(89deg, #01EBA6 0%, #01D398 34.90%, #01A47D 69.79%, #018C77 97.97%));
 					background-clip: text;
 					-webkit-background-clip: text;
 					-webkit-text-fill-color: transparent;"
-					class="mb-2 text-xl font-bold tracking-tight"
+					class="mb-2 text-xl font-bold tracking-tight max-md:text-base"
 				>
 					About
 				</h5>
-				<div class="mb-3 overflow-hidden box-content h-[3.5rem]">
-					<h2 class="text-white block font-bold text-5xl words">Rodro</h2>
-					<h2 class="text-white block font-bold text-5xl words">UX</h2>
-					<h2 class="text-white block font-bold text-5xl words">Gamer</h2>
-					<h2 class="text-white block font-bold text-5xl words">Designer</h2>
-					<h2 class="text-white block font-bold text-5xl words">Developer</h2>
+				<div class="mb-3 overflow-hidden box-content h-[3.5rem] max-md:h-[2.5rem]">
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">Rodro</h2>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">UX</h2>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">Gamer</h2>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">Designer</h2>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">Developer</h2>
 				</div>
-				<p class="text-[#C2C2C2]">
-					I am Juan Rodriguez, <span class="text-white font-medium"
+				<p class="text-[#C2C2C2] max-md:text-sm">
+					I am Juan Rodriguez, <span class="text-white font-medium max-md:text-sm"
 						>Interactive Media Designer</span
 					> with vocation to work in
-					<span class="text-white font-medium">UX, Frontend devolper</span> and even
+					<span class="text-white font-medium max-md:text-sm">UX, Frontend devolper</span> and even
 					Mobile application development. With skills in interface design, ux research
 					and facility to program emerging technologies, which allows me to present
 					proposals focused on digital design and user-oriented experiences.
 				</p>
 			</div>
-			<Image
-				class="w-full rounded-t-lg h-96 rounded-r-lg pointer-events-none"
+			<div class="max-md:w-1/2 max-[480px]:w-[70%]">
+				<Image
+				class="rounded-t-lg h-96 rounded-r-lg pointer-events-none max-md:h-full"
 				src={profile}
 				alt=""
 				quality={'mid'}
 			/>
+			</div>
 		</div>
 	</article>
 </section>
