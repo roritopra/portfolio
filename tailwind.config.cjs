@@ -6,6 +6,15 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			gridColumnStart: {
+				'4' : '4'
+			},
+			gridColumnEnd: {
+				'12' : '12'
+			},
+			gridTemplateColumns: {
+				'14': 'repeat(14, minmax(0, 1fr))',
+			},
 			aspectRatio: {
 				'4/3': '4 / 3',
 				'1/1': '1 / 1',
