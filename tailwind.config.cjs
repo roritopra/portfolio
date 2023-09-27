@@ -6,6 +6,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				'sans': ['Roobert regular', 'sans-serif']
+			},
 			gridColumnStart: {
 				'4' : '4'
 			},
