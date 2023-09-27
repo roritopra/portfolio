@@ -39,6 +39,19 @@ import { Image } from 'astro:assets'
 		top: 0;
 		width: 50%;
 	}
+
+	@media only screen and (max-width: 800px) {
+		.section-background {
+			left: 69%;
+			margin-top: -40%;
+			transform: translateX(-45%);
+			width: 200%;
+		}
+		.section-background img {
+			width: 600%;
+		}
+	}
+
 </style>
 
 <section
@@ -53,11 +66,11 @@ import { Image } from 'astro:assets'
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;"
-			class="relative z-40 text-center mb-2 text-xl font-bold tracking-tight"
+			class="relative z-40 text-center mb-2 text-xl font-bold tracking-tight max-md:text-base"
 		>
 			Skills
 		</h6>
-		<h2 class="relative z-30 text-center text-white font-bold text-5xl mb-3">
+		<h2 class="relative z-30 text-center text-white font-bold text-5xl mb-3 max-md:text-3xl">
 			Frontend
 		</h2>
 	</div>
