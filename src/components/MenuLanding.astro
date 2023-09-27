@@ -6,6 +6,25 @@ import Linkedin from '../assets/linkedin.svg'
 
 import { Image } from 'astro:assets'
 ---
+<nav id="showMenu" class="hidden">
+	<div class="absolute bg-[#0C1014] grid place-content-center w-full min-h-screen z-40">
+		<ul class="flex flex-col items-center justify-center mb-10 text-2xl font-bold text-white">
+			<li class="py-4"><a href="/">Home</a></li>
+			<li class="py-4"><a id="close" href="#profile">About me</a></li>
+			<li class="py-4"><a id="close1" href="#projects">Projects</a></li>
+			<li class="py-4"><a id="close2" href="#call">Get In Touch</a></li>
+		</ul>
+		<div class="flex items-center justify-center gap-9 text-white">
+			<a href="https://www.linkedin.com/in/juan-jos%C3%A9-rodriguez-carabali-566990193/" target="_blank"><Image src={Linkedin} alt="Linkedin" width={45} height={45} /></a>
+			<a href="https://github.com/roritopra" target="_blank"
+					><Image src={Github} alt="Github" width={45} height={45} /></a
+			>
+			<a href="https://www.behance.net/rodro" target='_blank"'
+					><Image src={Behance} alt="Behance" width={45} height={45} /></a
+			>
+		</div>	
+	</div>
+</nav>
 
 <header
 	data-aos="fade-down"
@@ -34,22 +53,23 @@ import { Image } from 'astro:assets'
 			class="flex items-center text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
 		>
 			<li class="hidden xl:block sm:hidden">
-				<a href="#"><Image src={Linkedin} alt="" /></a>
+				<a href="https://www.linkedin.com/in/juan-jos%C3%A9-rodriguez-carabali-566990193/" target="_blank"><Image src={Linkedin} alt="linkedin" /></a>
 			</li>
 			<li class="hidden xl:block sm:hidden">
 				<a href="https://github.com/roritopra" target="_blank"
-					><Image src={Github} alt="" /></a
+					><Image src={Github} alt="github" /></a
 				>
 			</li>
 			<li class="hidden xl:block sm:hidden">
 				<a href="https://www.behance.net/rodro" target='_blank"'
-					><Image src={Behance} alt="" /></a
+					><Image src={Behance} alt="behance" /></a
 				>
 			</li>
-			<li class="block sm:block xl:hidden"><a href="#">Menu</a></li>
+			<li id="openMenu" class="block sm:block xl:hidden"><svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+				<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+			</svg></li>
 		</ul>
 	</nav>
-
 	<div
 		id="menu-backdrop"
 		class={`absolute bg-white/5 backdrop-blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-all duration-500 ease-in-out opacity-0 -z-10
@@ -103,4 +123,33 @@ import { Image } from 'astro:assets'
 
 	const sectionElements = document.querySelectorAll('.landing-section')
 	sectionElements.forEach((section) => observer.observe(section))
+</script>
+
+<script>
+	const openMenu = document.querySelector('#openMenu') as HTMLElement
+	const showMenu = document.querySelector('#showMenu') as HTMLElement
+
+	openMenu.addEventListener('click', () => {
+		if (showMenu.classList.contains('hidden')) {
+			showMenu.classList.remove('hidden')
+		} else {
+			showMenu.classList.add('hidden')
+		}
+	})
+
+	const closeLists = document.querySelector('#close') as HTMLElement
+
+	closeLists.addEventListener('click', () => {
+		showMenu.classList.add('hidden')
+	})
+	const closeLists1 = document.querySelector('#close1') as HTMLElement
+
+	closeLists1.addEventListener('click', () => {
+		showMenu.classList.add('hidden')
+	})
+	const closeLists2 = document.querySelector('#close2') as HTMLElement
+
+	closeLists2.addEventListener('click', () => {
+		showMenu.classList.add('hidden')
+	})
 </script>
