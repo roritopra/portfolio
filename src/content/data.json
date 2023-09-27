@@ -2,34 +2,34 @@
 	{
 		"id": 1,
 		"title": "Astra Channel",
-		"content": "I decided to create a television channel on the concept of astronomy for the general public. lots of history and technology like space, rockets, planets, stars and more that humans haven't gotten to witness.",
+		"content": "I decided to create a television channel on the concept of astronomy for the general public. lots of history and technology like space, rockets, planets, stars and more that humans haven't gotten to witness. Is a project that combines motion graphics, video editing, animation and graphic design.",
 		"linkb": "https://www.behance.net/gallery/156476715/ASTRA-Channel",
 		"linkg": "",
 		"linkp": "",
-		"tags": ["Photoshop", "After Effects", "Stock", "Motion Graphics"]
+		"tags": ["Photoshop", "After Effects", "Stock", "Motion Graphics", "Animation"]
 	},
 	{
 		"id": 2,
 		"title": "Starbucks OOH - Game",
-		"content": "A project that simulates an interactive experience as if working in a gencia hired by starbucks to advertise the four largest Starbucks in Cali, is an interactive experience that combines arduino with user experience, interface design and web design.",
+		"content": "A project that combines the design of a game with the design of an OOH campaign for Starbucks. The game is based on the concept of the campaign, which is to create attention and interest in the public to go to the stores and try the new products. I worked in the logic of the game, dashboard, and arduino",
 		"linkb": "https://www.behance.net/gallery/164537999/STARBUCKS-Experience-OOH-and-Mupi-Design",
 		"linkg": "https://github.com/roritopra/starbucks-game-phase_2",
 		"linkp": "",
-		"tags": ["HTML", "CSS", "JavaScript", "Figma", "Arduino"]
+		"tags": ["HTML", "CSS", "JavaScript", "Figma", "Arduino", "IOT"]
 	},
 	{
 		"id": 3,
 		"title": "H&M - Customer Journey",
-		"content": "H&M is one of the most recognized fashion brands around the world, they want to bring to their customers the best experience at stores as possible.",
+		"content": "We worked in H&M to improve the customer experience in the store, we did a research and we found that the customers have a lot of problems with the sizes, so we created a new experience for the customers to find the right size for them.",
 		"linkb": "https://www.behance.net/gallery/158427797/H-M-New-Customer-Experience-Shopping-in-company",
 		"linkg": "",
 		"linkp": "",
-		"tags": ["Figma", "Photoshop", "Microsoft Excel", "Minitab"]
+		"tags": ["Figma", "Photoshop", "Minitab", "UX", "Research"]
 	},
 	{
 		"id": 4,
 		"title": "Banco W",
-		"content": "The Colombian bank, Banco W approached us to find ways to get closer to its customers, seeking that they have a better experience through the bank's digital channels and that they can provide them with information in a clear and precise manner.",
+		"content": "We worked in the new webpage for Banco W, a bank that is focused on the new generations, we created a new experience for the users to find the information that they need, we created a new design for the website and I worke in the front-end development.",
 		"linkb": "https://www.behance.net/gallery/174124551/Banco-W-UXUI-Project",
 		"linkg": "https://github.com/alejandromedina1/banco-w-site",
 		"linkp": "https://banco-w-site.vercel.app/",
