@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Made with blood, sweat, tears and love with Astro❤️
 
 ```
 npm create astro@latest -- --template basics
