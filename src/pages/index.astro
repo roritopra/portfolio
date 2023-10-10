@@ -1,11 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import MenuLanding from '../components/MenuLanding.astro'
 import HeaderLanding from '../components/HeaderLanding.astro'
-import Profile from '../components/Profile.astro'
-import ProjectsGrids from '../components/ProjectsGrids.astro'
-import Skills from '../components/Skills.astro'
-import CallToAction from '../components/CallToAction.astro'
 import Rodro from '../assets/rodro.webp'
 
 import { Image } from 'astro:assets'
@@ -15,49 +10,14 @@ import { Image } from 'astro:assets'
 	<div class="animate">
 		<Image class="title" src={Rodro} alt="Rodro" quality={'mid'} />
 	</div>
-	<div class="noise bg-noise"></div>
-	<MenuLanding />
 	<main
 		class="bg-[#0C1014] snap-y snap-mandatory relative z-30 w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
 	>
-		<div
-			style="position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-image: url('/bg_logo.webp');
-		background-size: 20%;
-		background-repeat: no-repeat;
-		background-position: center;
-		pointer-events: none;
-		z-index: 1;"
-		>
-		</div>
-			<HeaderLanding />
-			<Profile />
-		<div class="pb-64 max-lg:pb-24">
-			<ProjectsGrids />
-		</div>
-			<Skills />
-			<CallToAction />
+		<HeaderLanding />
 	</main>
 </Layout>
 
 <style>
-	.noise {
-		pointer-events: none;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		content: '';
-		opacity: 0.02;
-		z-index: 1000;
-		pointer-events: none;
-		background-image: url(/noise.gif);
-	}
 	.animate {
 		position: absolute;
 		z-index: 999;

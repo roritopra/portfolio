@@ -21,7 +21,7 @@ import json from '../content/data.json'
 
 <section
 	id="projects"
-	class="relative h-full px-12 grid grid-cols-14 z-50 max-lg:grid-cols-11"
+	class="relative h-full px-12 grid grid-cols-14 z-30 max-lg:grid-cols-11 pt-[9rem] pb-[46rem]"
 >
 	<div class="section-background">
 		<Image src={BgProjects} alt="" format='webp' quality={"mid"}>
@@ -325,13 +325,13 @@ import json from '../content/data.json'
 	.section-background {
 		height: auto;
 		left: 100%;
+		margin-top: 14%;
 		transform: translateX(-55%);
-		width: 200%;
+		width: 230%;
 		z-index: 1;
 		mix-blend-mode: lighten;
 		pointer-events: none;
 		position: absolute;
-		bottom: 0%;
 	}
 	.section-background img {
 		z-index: 60;
@@ -343,10 +343,28 @@ import json from '../content/data.json'
 	@media only screen and (max-width: 1024px) {
 		.section-background {
 		left: 69%;
+		}
+	.section-background img {
+		width: 100%;
+		}
+	}
+	@media only screen and (max-width: 600px) {
+		.section-background {
+			margin-top: 30%;
 	}
 	.section-background img {
 		width: 100%;
+		}
 	}
+	@media only screen and (max-width: 500px) {
+		.section-background {
+			margin-top: 50%;
+		}
+	}
+	@media only screen and (max-width: 400px) {
+		.section-background {
+			margin-top: 65%;
+		}
 	}
 </style>
 
