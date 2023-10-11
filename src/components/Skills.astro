@@ -23,10 +23,10 @@ import { Image } from 'astro:assets'
 	.section-background {
 		height: auto;
 		left: 90%;
-		margin-top: -33%;
+		margin-top: -11%;
 		transform: translateX(-45%);
 		width: 200%;
-		z-index: 999;
+		z-index: 10;
 		mix-blend-mode: lighten;
 		pointer-events: none;
 		position: absolute;
@@ -43,7 +43,7 @@ import { Image } from 'astro:assets'
 	@media only screen and (max-width: 800px) {
 		.section-background {
 			left: 69%;
-			margin-top: -40%;
+			margin-top: -30%;
 			transform: translateX(-45%);
 			width: 200%;
 		}
@@ -51,7 +51,6 @@ import { Image } from 'astro:assets'
 			width: 600%;
 		}
 	}
-
 </style>
 
 <section
@@ -70,11 +69,15 @@ background-clip: text;
 		>
 			Skills
 		</h6>
-		<h2 class="relative z-30 text-center text-white font-bold text-5xl mb-3 max-md:text-3xl">
+		<h2
+			class="relative z-30 text-center text-white font-bold text-5xl mb-3 max-md:text-3xl"
+		>
 			Frontend
 		</h2>
 	</div>
-	<article class="flex flex-wrap justify-center items-center gap-12 mb-44 max-md:gap-6 max-md:px-6 max-md:mb-24">
+	<article
+		class="flex flex-wrap justify-center items-center gap-12 mb-44 max-md:gap-6 max-md:px-6 max-md:mb-24"
+	>
 		<Image
 			data-tooltip-target="tooltip-bottom"
 			data-tooltip-placement="bottom"
@@ -213,11 +216,15 @@ background-clip: text;
 		</div>
 	</article>
 	<div class="flex justify-center flex-col items-center mb-20">
-		<h2 class="relative z-30 text-center text-white font-bold text-5xl mb-3 max-md:text-3xl">
+		<h2
+			class="relative z-30 text-center text-white font-bold text-5xl mb-3 max-md:text-3xl"
+		>
 			Other
 		</h2>
 	</div>
-	<article class="flex flex-wrap justify-center items-center gap-12 mb-32 max-md:gap-6 max-md:px-6">
+	<article
+		class="flex flex-wrap justify-center items-center gap-12 mb-32 max-md:gap-6 max-md:px-6"
+	>
 		<Image
 			data-tooltip-target="tooltip-bottom9"
 			data-tooltip-placement="bottom"

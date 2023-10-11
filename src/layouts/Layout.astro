@@ -1,77 +1,24 @@
 ---
 interface Props {
 	title: string
+	seoTitle: string
+	seoDesc: string
 }
 
-const { title } = Astro.props
+const { title, seoDesc, seoTitle } = Astro.props
 
-import MenuLanding from '../components/MenuLanding.astro';
+import Head from './Head.astro'
+import MenuLanding from '../components/MenuLanding.astro'
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/Capa 9.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-		<style is:global>
-			@font-face {
-			font-family: 'Roobert regular';
-			src: url('/fonts/Roobert-Regular.otf') format('otf');
-			font-weight: normal;
-			font-style: normal;
-			font-display: swap;
-			}
-		</style>
-		<title>{title}</title>
-		<style>
-			body {
-				cursor: none;
-			}
-
-			.cursor-dot {
-				width: 5px;
-				height: 5px;
-				background: #fff;
-			}
-
-			.cursor-outline {
-				width: 30px;
-				height: 30px;
-				border: 2px solid hsl(0, 0%, 100%, 0.5);
-			}
-
-			.cursor-dot,
-			.cursor-outline {
-				position: fixed;
-				top: 0;
-				left: 0;
-				pointer-events: none;
-				transform: translate(-50%, -50%);
-				border-radius: 50%;
-				z-index: 9999;
-			}
-
-			@media only screen and (max-width: 1280px) {
-				.cursor-dot,
-				.cursor-outline {
-					display: none;
-				}
-
-				body {
-					cursor: default;
-				}
-			}
-		</style>
-	</head>
+	<Head title={title} seoTitle={seoTitle} seoDesc={seoDesc} />
 	<body>
 		<div class="cursor-dot"></div>
 		<div class="cursor-outline"></div>
 		<main
-		class="bg-[#0C1014] snap-y snap-mandatory relative z-30 w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
+			class="bg-[#0C1014] snap-y snap-mandatory relative z-30 w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
 		>
 			<MenuLanding />
 			<div class="noise bg-noise"></div>
@@ -130,21 +77,19 @@ import MenuLanding from '../components/MenuLanding.astro';
 				cursorOutline.style.borderColor = 'hsl(0, 0%, 100%, 0.5)'
 			})
 		</script>
-	</body>
+	</body><style>
+		.noise {
+			pointer-events: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			content: '';
+			opacity: 0.02;
+			z-index: 1000;
+			pointer-events: none;
+			background-image: url(/noise.gif);
+		}
+	</style>
 </html>
-
-<style>
-	.noise {
-		pointer-events: none;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		content: '';
-		opacity: 0.02;
-		z-index: 1000;
-		pointer-events: none;
-		background-image: url(/noise.gif);
-	}
-</style>
