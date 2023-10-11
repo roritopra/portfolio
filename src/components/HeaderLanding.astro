@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <main class="bg-[#0C1014]">
@@ -35,17 +34,16 @@
 
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
-    const video = document.getElementById('myVideo')
+		const video = document.getElementById('myVideo')
 
-    setTimeout(function () {
-        video.currentTime = 0
-        video.play()
-    }, 1500); 
+		setTimeout(function () {
+			video.currentTime = 0
+			video.play()
+		}, 1500)
 
-    video.addEventListener('ended', function () {
-        video.currentTime = 12
-        video.play()
-    })
-})
-
+		video.addEventListener('ended', function () {
+			video.currentTime = 12
+			video.play()
+		})
+	})
 </script>

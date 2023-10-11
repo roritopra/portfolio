@@ -21,7 +21,9 @@ background-repeat: no-repeat;"
 	<article
 		class="max-w-3xl w-full rounded-lg bg-gradient-to-t from-[#03B381] to-[#3B4755] p-1 drop-shadow-[0px_6px_80px_rgba(0,235,166,0.20)] max-lg:p-[2px]"
 	>
-		<div class="bg-gray-800 flex items-center flex-row rounded-lg max-md:flex-col card">
+		<div
+			class="bg-gray-800 flex items-center flex-row rounded-lg max-md:flex-col card"
+		>
 			<div class="flex flex-col justify-between p-4 leading-normal w/">
 				<h5
 					style="background: var(--titlessubtitles, linear-gradient(89deg, #01EBA6 0%, #01D398 34.90%, #01A47D 69.79%, #018C77 97.97%));
@@ -32,49 +34,63 @@ background-repeat: no-repeat;"
 				>
 					About
 				</h5>
-				<div class="mb-3 overflow-hidden box-content h-[3.5rem] max-md:h-[2.5rem]">
-					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">Rodro</h2>
-					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">Designer</h2>
-					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">Developer</h2>
-					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">Web UI</h2>
-					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">UX</h2>
+				<div
+					class="mb-3 overflow-hidden box-content h-[3.5rem] max-md:h-[2.5rem]"
+				>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">
+						Rodro
+					</h2>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">
+						Designer
+					</h2>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">
+						Developer
+					</h2>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">
+						Web UI
+					</h2>
+					<h2 class="text-white block font-bold text-5xl max-md:text-3xl words">
+						UX
+					</h2>
 				</div>
 				<p class="text-[#C2C2C2] max-md:text-sm">
-					I am Juan Rodriguez, <span class="text-white font-medium max-md:text-sm"
+					I am Juan Rodriguez, <span
+						class="text-white font-medium max-md:text-sm"
 						>Interactive Media Designer</span
 					> with vocation to work in
-					<span class="text-white font-medium max-md:text-sm">UX, Frontend devolper</span> and even
-					Mobile application development. With skills in interface design, ux research
-					and facility to program emerging technologies, which allows me to present
-					proposals focused on digital design and user-oriented experiences.
+					<span class="text-white font-medium max-md:text-sm"
+						>UX, Frontend devolper</span
+					> and even Mobile application development. With skills in interface design,
+					ux research and facility to program emerging technologies, which allows
+					me to present proposals focused on digital design and user-oriented experiences.
 				</p>
 			</div>
 			<div class="max-md:w-1/2 max-[480px]:w-[70%]">
 				<Image
-				class="rounded-t-lg h-[23rem] rounded-r-lg pointer-events-none max-md:h-full"
-				src={profile}
-				alt=""
-				quality={'mid'}
-			/>
+					class="rounded-t-lg h-[23rem] rounded-r-lg pointer-events-none max-md:h-full"
+					src={profile}
+					alt=""
+					quality={'mid'}
+				/>
 			</div>
 		</div>
 	</article>
 </section>
 
 <script>
-	const handleOnMouseMove = e => {
-  const {currentTarget: target} = e;
-  
-  const rect = target.getBoundingClientRect(),
-        x = e.clientX - rect.left,
-        y = e.clientY - rect.top;
-  
-  target.style.setProperty ("--mouse-x", `${x}px`);
-  target.style.setProperty ("--mouse-y", `${y}px`);
-}
-for(const card of document.querySelectorAll(".card")) {
-  card.onmousemove = e => handleOnMouseMove(e);
-}
+	const handleOnMouseMove = (e) => {
+		const { currentTarget: target } = e
+
+		const rect = target.getBoundingClientRect(),
+			x = e.clientX - rect.left,
+			y = e.clientY - rect.top
+
+		target.style.setProperty('--mouse-x', `${x}px`)
+		target.style.setProperty('--mouse-y', `${y}px`)
+	}
+	for (const card of document.querySelectorAll('.card')) {
+		card.onmousemove = (e) => handleOnMouseMove(e)
+	}
 </script>
 
 <style>
@@ -84,49 +100,53 @@ for(const card of document.querySelectorAll(".card")) {
 		animation: spin_words 20s infinite;
 	}
 
-	@keyframes spin_words{
-    10%{
-        transform: translateY(-112%);
-    }
-    25%{
-        transform: translateY(-100%);
-    }
-    35%{
-        transform: translateY(-212%);
-    }
-    50%{
-        transform: translateY(-200%);
-    }
-    60%{
-        transform: translateY(-312%);
-    }
-    75%{
-        transform: translateY(-300%);
-    }
-    85%{
-        transform: translateY(-412%);
-    }
-    100%{
-        transform: translateY(-400%);
-    }
-}
+	@keyframes spin_words {
+		10% {
+			transform: translateY(-112%);
+		}
+		25% {
+			transform: translateY(-100%);
+		}
+		35% {
+			transform: translateY(-212%);
+		}
+		50% {
+			transform: translateY(-200%);
+		}
+		60% {
+			transform: translateY(-312%);
+		}
+		75% {
+			transform: translateY(-300%);
+		}
+		85% {
+			transform: translateY(-412%);
+		}
+		100% {
+			transform: translateY(-400%);
+		}
+	}
 </style>
 
 <style>
 	.card:hover::before {
-  opacity: 1;
-}
-.card::before {
-  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),rgba(255,255,255,0.06),transparent 40%);
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  top: 0px;
-  left: 0px;
-  border-radius: inherit;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 500ms;
-}
+		opacity: 1;
+	}
+	.card::before {
+		background: radial-gradient(
+			800px circle at var(--mouse-x) var(--mouse-y),
+			rgba(255, 255, 255, 0.06),
+			transparent 40%
+		);
+		position: absolute;
+		content: '';
+		height: 100%;
+		width: 100%;
+		top: 0px;
+		left: 0px;
+		border-radius: inherit;
+		z-index: 2;
+		opacity: 0;
+		transition: opacity 500ms;
+	}
 </style>
