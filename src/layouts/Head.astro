@@ -1,6 +1,7 @@
 ---
 import { SEO } from 'astro-seo'
 const { title, seoTitle, seoDesc } = Astro.props
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <head>
@@ -27,7 +28,6 @@ const { title, seoTitle, seoDesc } = Astro.props
 	<!-- Global Metadata -->
 	<link rel="icon" href="/favicon.png" />
 	<link rel="apple-touch-icon" href="/images/icon/192x192.png" />
-	<link rel="manifest" href="/manifest.webmanifest" />
 	<meta name="google" content="notranslate" />
 	<link
 		rel="apple-touch-icon"
@@ -153,4 +153,5 @@ const { title, seoTitle, seoDesc } = Astro.props
 			}
 		}
 	</style>
+	<ViewTransitions />
 </head>
