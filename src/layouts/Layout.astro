@@ -9,6 +9,7 @@ const { title, seoDesc, seoTitle } = Astro.props
 
 import Head from './Head.astro'
 import MenuLanding from '../components/MenuLanding.astro'
+import "aos/dist/aos.css"; // AOS styles
 ---
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ import MenuLanding from '../components/MenuLanding.astro'
 		<main
 			class="bg-[#0C1014] snap-y snap-mandatory relative z-30 w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
 		>
-			<MenuLanding />
+			<MenuLanding data-aos="fade-up" />
 			<div class="noise bg-noise"></div>
 			<slot />
 		</main>
@@ -28,10 +29,10 @@ import MenuLanding from '../components/MenuLanding.astro'
 			is:inline
 			src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
 		></script>
-		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script is:inline>
-			AOS.init()
-		</script>
+			aosInit();
+			document.addEventListener("astro:after-swap", aosInit);
+		  </script>
 		<script>
 			const cursorDot = document.querySelector('.cursor-dot') as HTMLElement
 			const cursorOutline = document.querySelector('.cursor-outline')
