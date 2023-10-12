@@ -9,7 +9,7 @@ const { title, seoDesc, seoTitle } = Astro.props
 
 import Head from './Head.astro'
 import MenuLanding from '../components/MenuLanding.astro'
-import "aos/dist/aos.css"; // AOS styles
+import 'aos/dist/aos.css' // AOS styles
 ---
 
 <!DOCTYPE html>
@@ -29,68 +29,73 @@ import "aos/dist/aos.css"; // AOS styles
 			is:inline
 			src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
 		></script>
-		<script is:inline>
-			aosInit();
-			document.addEventListener("astro:after-swap", aosInit);
-		  </script>
 		<script>
-			const cursorDot = document.querySelector('.cursor-dot') as HTMLElement
-			const cursorOutline = document.querySelector('.cursor-outline')
+			import { aosInit } from '/src/js/aos.js'
 
-			function changeCursorColorOnHover(event) {
-				const isLink = event.target.tagName.toLowerCase() === 'a'
-				const isImg = event.target.tagName.toLowerCase() === 'img'
+			aosInit()
+			document.addEventListener('astro:after-swap', aosInit)
+		</script>
+		<script>
+			document.addEventListener('astro:page-load', function () {
+				const cursorDot = document.querySelector('.cursor-dot') as HTMLElement
+				const cursorOutline = document.querySelector('.cursor-outline')
 
-				if (isLink || isImg) {
-					cursorDot.style.background = '#00EBA6'
-					cursorOutline.style.borderColor = '#00EBA6'
-					cursorOutline.style.background = 'rgba(0, 235, 166, 0.50)'
-				} else {
+				function changeCursorColorOnHover(event) {
+					const isLink = event.target.tagName.toLowerCase() === 'a'
+					const isImg = event.target.tagName.toLowerCase() === 'img'
+
+					if (isLink || isImg) {
+						cursorDot.style.background = '#00EBA6'
+						cursorOutline.style.borderColor = '#00EBA6'
+						cursorOutline.style.background = 'rgba(0, 235, 166, 0.50)'
+					} else {
+						cursorDot.style.background = '#fff'
+						cursorOutline.style.borderColor = 'hsl(0, 0%, 100%, 0.5)'
+						cursorOutline.style.background = 'rgba(0, 235, 166, 0.00)'
+					}
+				}
+
+				window.addEventListener('mousemove', function (e) {
+					const posX = e.clientX
+					const posY = e.clientY
+
+					cursorDot.style.left = `${posX}px`
+					cursorDot.style.top = `${posY}px`
+
+					cursorOutline.animate(
+						{
+							left: `${posX}px`,
+							top: `${posY}px`,
+						},
+						{
+							duration: 500,
+							easing: 'ease-out',
+							fill: 'forwards',
+						}
+					)
+				})
+
+				document.addEventListener('mouseover', changeCursorColorOnHover)
+				document.addEventListener('mouseout', () => {
 					cursorDot.style.background = '#fff'
 					cursorOutline.style.borderColor = 'hsl(0, 0%, 100%, 0.5)'
-					cursorOutline.style.background = 'rgba(0, 235, 166, 0.00)'
-				}
-			}
-
-			window.addEventListener('mousemove', function (e) {
-				const posX = e.clientX
-				const posY = e.clientY
-
-				cursorDot.style.left = `${posX}px`
-				cursorDot.style.top = `${posY}px`
-
-				cursorOutline.animate(
-					{
-						left: `${posX}px`,
-						top: `${posY}px`,
-					},
-					{
-						duration: 500,
-						easing: 'ease-out',
-						fill: 'forwards',
-					}
-				)
-			})
-
-			document.addEventListener('mouseover', changeCursorColorOnHover)
-			document.addEventListener('mouseout', () => {
-				cursorDot.style.background = '#fff'
-				cursorOutline.style.borderColor = 'hsl(0, 0%, 100%, 0.5)'
+				})
 			})
 		</script>
-	</body><style>
-		.noise {
-			pointer-events: none;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100vh;
-			content: '';
-			opacity: 0.02;
-			z-index: 1000;
-			pointer-events: none;
-			background-image: url(/noise.gif);
-		}
-	</style>
+		<style>
+			.noise {
+				pointer-events: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				content: '';
+				opacity: 0.02;
+				z-index: 1000;
+				pointer-events: none;
+				background-image: url(/noise.gif);
+			}
+		</style>
+	</body>
 </html>

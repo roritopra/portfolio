@@ -101,77 +101,83 @@ import { Image } from 'astro:assets'
 </header>
 
 <script>
-	const listItem = document.querySelectorAll('#landing-header li')
-	const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+	document.addEventListener('astro:page-load', () => {
+		const listItem = document.querySelectorAll('#landing-header li')
+		const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
 
-	listItem.forEach((item) => {
-		item.addEventListener('mouseenter', () => {
-			const { left, top, width, height } = item.getBoundingClientRect()
+		listItem.forEach((item) => {
+			item.addEventListener('mouseenter', () => {
+				const { left, top, width, height } = item.getBoundingClientRect()
 
-			menuBackDrop.style.setProperty('--left', `${left}px`)
-			menuBackDrop.style.setProperty('--top', `${top}px`)
-			menuBackDrop.style.setProperty('--width', `${width}px`)
-			menuBackDrop.style.setProperty('--height', `${height}px`)
+				menuBackDrop.style.setProperty('--left', `${left}px`)
+				menuBackDrop.style.setProperty('--top', `${top}px`)
+				menuBackDrop.style.setProperty('--width', `${width}px`)
+				menuBackDrop.style.setProperty('--height', `${height}px`)
 
-			menuBackDrop.style.opacity = '1'
-			menuBackDrop.style.visibility = 'visible'
-		})
+				menuBackDrop.style.opacity = '1'
+				menuBackDrop.style.visibility = 'visible'
+			})
 
-		item.addEventListener('mouseleave', () => {
-			menuBackDrop.style.opacity = '0'
-			menuBackDrop.style.visibility = 'hidden'
+			item.addEventListener('mouseleave', () => {
+				menuBackDrop.style.opacity = '0'
+				menuBackDrop.style.visibility = 'hidden'
+			})
 		})
 	})
 </script>
 
 <script>
-	const headerEl = document.querySelector('#landing-header') as HTMLElement
+	document.addEventListener('astro:page-load', () => {
+		const headerEl = document.querySelector('#landing-header') as HTMLElement
 
-	const observerOptions = {
-		root: null,
-		rootMargin: '0px', // en cuanto se vea el elemento
-		threshold: 0.9, // porcentaje de visibilidad
-	}
+		const observerOptions = {
+			root: null,
+			rootMargin: '0px', // en cuanto se vea el elemento
+			threshold: 0.9, // porcentaje de visibilidad
+		}
 
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			const { isIntersecting } = entry
-			if (isIntersecting) {
-				const color = entry.target.getAttribute('data-header-color')
-				headerEl.style.color = color
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				const { isIntersecting } = entry
+				if (isIntersecting) {
+					const color = entry.target.getAttribute('data-header-color')
+					headerEl.style.color = color
+				}
+			})
+		}, observerOptions)
+
+		const sectionElements = document.querySelectorAll('.landing-section')
+		sectionElements.forEach((section) => observer.observe(section))
+	})
+</script>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const openMenu = document.querySelector('#openMenu') as HTMLElement
+		const showMenu = document.querySelector('#showMenu') as HTMLElement
+
+		openMenu.addEventListener('click', () => {
+			if (showMenu.classList.contains('hidden')) {
+				showMenu.classList.remove('hidden')
+			} else {
+				showMenu.classList.add('hidden')
 			}
 		})
-	}, observerOptions)
 
-	const sectionElements = document.querySelectorAll('.landing-section')
-	sectionElements.forEach((section) => observer.observe(section))
-</script>
+		const closeLists = document.querySelector('#close') as HTMLElement
 
-<script>
-	const openMenu = document.querySelector('#openMenu') as HTMLElement
-	const showMenu = document.querySelector('#showMenu') as HTMLElement
-
-	openMenu.addEventListener('click', () => {
-		if (showMenu.classList.contains('hidden')) {
-			showMenu.classList.remove('hidden')
-		} else {
+		closeLists.addEventListener('click', () => {
 			showMenu.classList.add('hidden')
-		}
-	})
+		})
+		const closeLists1 = document.querySelector('#close1') as HTMLElement
 
-	const closeLists = document.querySelector('#close') as HTMLElement
+		closeLists1.addEventListener('click', () => {
+			showMenu.classList.add('hidden')
+		})
+		const closeLists2 = document.querySelector('#close2') as HTMLElement
 
-	closeLists.addEventListener('click', () => {
-		showMenu.classList.add('hidden')
-	})
-	const closeLists1 = document.querySelector('#close1') as HTMLElement
-
-	closeLists1.addEventListener('click', () => {
-		showMenu.classList.add('hidden')
-	})
-	const closeLists2 = document.querySelector('#close2') as HTMLElement
-
-	closeLists2.addEventListener('click', () => {
-		showMenu.classList.add('hidden')
+		closeLists2.addEventListener('click', () => {
+			showMenu.classList.add('hidden')
+		})
 	})
 </script>

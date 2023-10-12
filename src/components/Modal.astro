@@ -152,109 +152,110 @@ const { title, content, linkg, linkb, linkp, tags, id, close } = Astro.props
 </div>
 
 <script>
-	/* --------- Modal4 astra -------- */
+	/* --------- Modal1 astra -------- */
+	document.addEventListener('astro:page-load', function () {
+		const openModalBtn = document.getElementById('openModalBtn')
+		const closeModalBtn = document.getElementById('closeModalBtn')
+		const modalContainer = document.getElementById('modalContainer')
 
-	const openModalBtn = document.getElementById('openModalBtn')
-	const closeModalBtn = document.getElementById('closeModalBtn')
-	const modalContainer = document.getElementById('modalContainer')
+		openModalBtn.addEventListener('click', () => {
+			modalContainer.style.display = 'flex'
+		})
 
-	openModalBtn.addEventListener('click', () => {
-		modalContainer.style.display = 'flex'
-	})
-
-	function closeModal() {
-		modalContainer.style.display = 'none'
-	}
-
-	closeModalBtn.addEventListener('click', closeModal)
-	modalContainer.addEventListener('click', (event) => {
-		if (event.target === modalContainer) {
-			closeModal()
+		function closeModal() {
+			modalContainer.style.display = 'none'
 		}
-	})
 
-	/* --------- Modal2 starbucks -------- */
+		closeModalBtn.addEventListener('click', closeModal)
+		modalContainer.addEventListener('click', (event) => {
+			if (event.target === modalContainer) {
+				closeModal()
+			}
+		})
 
-	const openModalBtn2 = document.getElementById('openModalBtn2')
-	const modalContainer2 = document.getElementById('modalContainer2')
-	const closeModalBtn2 = document.getElementById('closeModalBtn2')
+		/* --------- Modal2 starbucks -------- */
 
-	openModalBtn2.addEventListener('click', () => {
-		modalContainer2.style.display = 'flex'
-	})
+		const openModalBtn2 = document.getElementById('openModalBtn2')
+		const modalContainer2 = document.getElementById('modalContainer2')
+		const closeModalBtn2 = document.getElementById('closeModalBtn2')
 
-	function closeModal2() {
-		modalContainer2.style.display = 'none'
-	}
+		openModalBtn2.addEventListener('click', () => {
+			modalContainer2.style.display = 'flex'
+		})
 
-	closeModalBtn2.addEventListener('click', closeModal2)
-	modalContainer2.addEventListener('click', (event) => {
-		if (event.target === modalContainer2) {
-			closeModal2()
+		function closeModal2() {
+			modalContainer2.style.display = 'none'
 		}
-	})
 
-	/* --------- Modal3 h&m -------- */
+		closeModalBtn2.addEventListener('click', closeModal2)
+		modalContainer2.addEventListener('click', (event) => {
+			if (event.target === modalContainer2) {
+				closeModal2()
+			}
+		})
 
-	const openModalBtn3 = document.getElementById('openModalBtn3')
-	const modalContainer3 = document.getElementById('modalContainer3')
-	const closeModalBtn3 = document.getElementById('closeModalBtn3')
+		/* --------- Modal3 h&m -------- */
 
-	openModalBtn3.addEventListener('click', () => {
-		modalContainer3.style.display = 'flex'
-	})
+		const openModalBtn3 = document.getElementById('openModalBtn3')
+		const modalContainer3 = document.getElementById('modalContainer3')
+		const closeModalBtn3 = document.getElementById('closeModalBtn3')
 
-	function closeModal3() {
-		modalContainer3.style.display = 'none'
-	}
+		openModalBtn3.addEventListener('click', () => {
+			modalContainer3.style.display = 'flex'
+		})
 
-	closeModalBtn3.addEventListener('click', closeModal3)
-	modalContainer3.addEventListener('click', (event) => {
-		if (event.target === modalContainer3) {
-			closeModal3()
+		function closeModal3() {
+			modalContainer3.style.display = 'none'
 		}
-	})
 
-	/* --------- Modal4 bancow -------- */
+		closeModalBtn3.addEventListener('click', closeModal3)
+		modalContainer3.addEventListener('click', (event) => {
+			if (event.target === modalContainer3) {
+				closeModal3()
+			}
+		})
 
-	const openModalBtn4 = document.getElementById('openModalBtn4')
-	const modalContainer4 = document.getElementById('modalContainer4')
-	const closeModalBtn4 = document.getElementById('closeModalBtn4')
+		/* --------- Modal4 bancow -------- */
 
-	openModalBtn4.addEventListener('click', () => {
-		modalContainer4.style.display = 'flex'
-	})
+		const openModalBtn4 = document.getElementById('openModalBtn4')
+		const modalContainer4 = document.getElementById('modalContainer4')
+		const closeModalBtn4 = document.getElementById('closeModalBtn4')
 
-	function closeModal4() {
-		modalContainer4.style.display = 'none'
-	}
+		openModalBtn4.addEventListener('click', () => {
+			modalContainer4.style.display = 'flex'
+		})
 
-	closeModalBtn4.addEventListener('click', closeModal4)
-	modalContainer4.addEventListener('click', (event) => {
-		if (event.target === modalContainer4) {
-			closeModal4()
+		function closeModal4() {
+			modalContainer4.style.display = 'none'
 		}
-	})
 
-	/* --------- Modal5 bitx -------- */
+		closeModalBtn4.addEventListener('click', closeModal4)
+		modalContainer4.addEventListener('click', (event) => {
+			if (event.target === modalContainer4) {
+				closeModal4()
+			}
+		})
 
-	const openModalBtn5 = document.getElementById('openModalBtn5')
-	const modalContainer5 = document.getElementById('modalContainer5')
-	const closeModalBtn5 = document.getElementById('closeModalBtn5')
+		/* --------- Modal5 bitx -------- */
 
-	openModalBtn5.addEventListener('click', () => {
-		modalContainer5.style.display = 'flex'
-	})
+		const openModalBtn5 = document.getElementById('openModalBtn5')
+		const modalContainer5 = document.getElementById('modalContainer5')
+		const closeModalBtn5 = document.getElementById('closeModalBtn5')
 
-	function closeModal5() {
-		modalContainer5.style.display = 'none'
-	}
+		openModalBtn5.addEventListener('click', () => {
+			modalContainer5.style.display = 'flex'
+		})
 
-	closeModalBtn5.addEventListener('click', closeModal5)
-	modalContainer5.addEventListener('click', (event) => {
-		if (event.target === modalContainer5) {
-			closeModal5()
+		function closeModal5() {
+			modalContainer5.style.display = 'none'
 		}
+
+		closeModalBtn5.addEventListener('click', closeModal5)
+		modalContainer5.addEventListener('click', (event) => {
+			if (event.target === modalContainer5) {
+				closeModal5()
+			}
+		})
 	})
 </script>
 
