@@ -4,7 +4,7 @@ import bg from '../assets/bg_call.webp'
 import { Image } from 'astro:assets';
 ---
 
-<section id="call" class="relative pt-24 pb-24 min-h-screen
+<section id="call" class="relative h-screen 
 ">
 	<div class="section-background">
 		<Image src={bg} alt="" format='webp' quality={"mid"} width={1440} height={572} >
@@ -79,8 +79,7 @@ import { Image } from 'astro:assets';
 	.call-to-action {
 		padding-bottom: 120px;
 		overflow: hidden;
-		padding: 240px 0;
-		padding-top: 120px;
+		top: 35%;
 		position: relative;
 	}
 	.call-to-action .carousel {
