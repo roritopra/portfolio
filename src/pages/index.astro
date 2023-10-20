@@ -2,8 +2,6 @@
 import Layout from '../layouts/Layout.astro'
 import HeaderLanding from '../components/HeaderLanding.astro'
 import Rodro from '../assets/rodro.webp'
-
-import { Image } from 'astro:assets'
 ---
 
 <Layout
@@ -12,7 +10,7 @@ import { Image } from 'astro:assets'
 	seoDesc="Interactive Media designer who expertise in UI, UX, Front-end development and branding."
 >
 	<div class="animate">
-		<Image class="title" src={Rodro} alt="Rodro" quality={'mid'} />
+		<img class="title" src={Rodro.src} alt="">
 	</div>
 	<main
 		class="bg-[#0C1014] snap-y snap-mandatory relative z-30 w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
