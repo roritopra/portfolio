@@ -256,6 +256,28 @@ const { title, content, linkg, linkb, linkp, tags, id, close } = Astro.props
 				closeModal5()
 			}
 		})
+
+
+		/* --------- Modal6 Innlab -------- */
+
+		const openModalBtn6 = document.getElementById('openModalBtn6')
+		const modalContainer6 = document.getElementById('modalContainer6')
+		const closeModalBtn6 = document.getElementById('closeModalBtn6')
+
+		openModalBtn6.addEventListener('click', () => {
+			modalContainer6.style.display = 'flex'
+		})
+
+		function closeModal6() {
+			modalContainer6.style.display = 'none'
+		}
+
+		closeModalBtn6.addEventListener('click', closeModal6)
+		modalContainer6.addEventListener('click', (event) => {
+			if (event.target === modalContainer6) {
+				closeModal6()
+			}
+		})
 	})
 </script>
 
@@ -264,7 +286,8 @@ const { title, content, linkg, linkb, linkp, tags, id, close } = Astro.props
 	#modalContainer2,
 	#modalContainer3,
 	#modalContainer4,
-	#modalContainer5 {
+	#modalContainer5,
+	#modalContainer6 {
 		z-index: 10000;
 		position: fixed;
 		top: 0;

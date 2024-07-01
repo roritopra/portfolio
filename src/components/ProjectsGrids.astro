@@ -4,7 +4,7 @@ import Modal from './Modal.astro'
 import Astra from '../assets/astra.webp'
 import Starbucks from '../assets/starbucks.webp'
 import HM from '../assets/h&m.webp'
-import Rodro from '../assets/rodro.webp'
+import Innlab from '../assets/innlab.webp'
 import Bank from '../assets/bancow.webp'
 import Bitx from '../assets/bitx.webp'
 import AstraBg from '../assets/astraBg.png'
@@ -13,6 +13,7 @@ import BankBg from '../assets/bankBg.png'
 import HMBg from '../assets/hmBg.png'
 import StarbucksBg from '../assets/starbucksBg.png'
 import BgProjects from '../assets/bg_projects.webp'
+import InnlabBg from '../assets/innlabBg.png'
 
 import { Image } from 'astro:assets'
 
@@ -118,6 +119,16 @@ import json from '../content/data.json'
 					linkp={json[4].linkp}
 					tags={json[4].tags}
 				/>
+				<Modal
+					id="modalContainer6"
+					close="closeModalBtn6"
+					title={json[5].title}
+					content={json[5].content}
+					linkb={json[5].linkb}
+					linkg={json[5].linkg}
+					linkp={json[5].linkp}
+					tags={json[5].tags}
+				/>
 			</div>
 			<div
 				class="w-full h-full flex items-center justify-center p-1 relative rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755] max-lg:p-[2px]"
@@ -173,12 +184,21 @@ import json from '../content/data.json'
 				id="item-3"
 			>
 				<div
-					class="flex justify-center items-center h-full rounded-md w-full bg-[#122C35]"
+					class="card-image6 flex justify-center items-center h-full rounded-md w-full bg-[#F3F3F3]"
+					id="openModalBtn6"
 				>
 					<Image
+						id="image11"
 						class="object-contain aspect-1/1 max-w-4/5"
-						src={Rodro}
-						alt="rodro image"
+						src={Innlab}
+						alt="Innlab image"
+						quality={"mid"}
+					/>
+					<Image
+						id="image12"
+						class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500 aspect-1/1 max-w-full"
+						src={InnlabBg}
+						alt="Innlab image"
 						quality={"mid"}
 					/>
 				</div>
@@ -305,7 +325,7 @@ import json from '../content/data.json'
 		image9.style.opacity = '1'
 		image10.style.opacity = '0'
 	})
-	/*
+	
 	const cardImage6 = document.querySelector('.card-image6')
 	const image11 = document.getElementById('image11')
 	const image12 = document.getElementById('image12')
@@ -319,7 +339,7 @@ import json from '../content/data.json'
 		image11.style.opacity = '1'
 		image12.style.opacity = '0'
 	})
-	*/
+	
 	})
 </script>
 

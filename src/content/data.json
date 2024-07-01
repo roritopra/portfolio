@@ -43,5 +43,13 @@
 		"linkg": "https://github.com/roritopra/bitx-cryptocurrencies",
 		"linkp": "https://bitx-cryptocurrencies.vercel.app/home-en.html",
 		"tags": ["HTML", "CSS", "JavaScript", "Figma", "Photoshop"]
+	},
+	{
+		"id": 6,
+		"title": "Innlab",
+		"content": "Design and develop, within a period of 16 weeks, a web artifact that favors customer relationships with the INNLab, in order to improve communication channels with the center, brand exposure and accessibility to the product portfolio and services.",
+		"linkb": "https://www.behance.net/gallery/201545949/INNLab-Customer-relationship-platform",
+		"linkp": "https://innlab.org",
+		"tags": ["React", "Tailwind", "JavaScript", "Figma", "Strapi", "Storybook", "PostgreSQL"]
 	}
 ]
